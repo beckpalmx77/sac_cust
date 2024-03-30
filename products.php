@@ -45,7 +45,7 @@ if (strlen($_SESSION['alogin']) == "") {
         <h4>รายการสินค้า (ยางรถยนต์)</h4>
         <!-- Custom Filter -->
         <table Style="width:50%; padding:10px;">
-            <tr> <th> หน้ากว้างยาง </th><th> แก้มยาง </th><th> เส้นผ่านศูนย์กลางกระทะล้อ </th></tr>
+            <tr> <th> หน้ากว้างยาง </th><th> แก้มยาง </th><th> ขนาดกระทะล้อ </th></tr>
 			<tr>
                 <td>
                     <select id='searchByName1' class="form-control ">

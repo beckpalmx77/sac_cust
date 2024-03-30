@@ -160,16 +160,29 @@ if (strlen($_SESSION['alogin']) == "") {
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="form-group">
-                                                                    <label for="privilege"
-                                                                           class="control-label">Privilege</label>
-                                                                    <select id="privilege" name="privilege"
-                                                                            class="form-control" data-live-search="true"
-                                                                            title="Please select">
-                                                                        <option>Admin</option>
-                                                                        <option>User</option>
-                                                                    </select>
+                                                                <div class="form-group row">
+                                                                    <div class="col-sm-6">
+                                                                        <label for="Privilege"
+                                                                               class="control-label">Privilege</label>
+                                                                        <select id="privilege" name="privilege"
+                                                                                class="form-control" data-live-search="true"
+                                                                                title="Please select">
+                                                                            <option>Admin</option>
+                                                                            <option>User</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-sm-6">
+                                                                        <label for="target"
+                                                                               class="control-label">Target</label>
+                                                                        <select id="target" name="target"
+                                                                                class="form-control" data-live-search="true"
+                                                                                title="Please select">
+                                                                            <option>-</option>
+                                                                            <option>_blank</option>
+                                                                        </select>
+                                                                    </div>
                                                                 </div>
+
                                                             </div>
                                                         </div>
                                                         <div class="modal-footer">
@@ -391,6 +404,7 @@ if (strlen($_SESSION['alogin']) == "") {
                 $('#main_label').val("");
                 $('#link').val("");
                 $('#icon').val("");
+                $('#target').val("");
                 $('.modal-title').html("<i class='fa fa-plus'></i> ADD Record");
                 $('#action').val('ADD');
                 $('#save').val('Save');
@@ -419,6 +433,7 @@ if (strlen($_SESSION['alogin']) == "") {
                         let main_label = response[i].main_label;
                         let link = response[i].link;
                         let icon = response[i].icon;
+                        let target = response[i].target;
                         let privilege = response[i].privilege;
 
                         $('#recordModal').modal('show');
@@ -429,6 +444,7 @@ if (strlen($_SESSION['alogin']) == "") {
                         $('#main_label').val(main_label);
                         $('#link').val(link);
                         $('#icon').val(icon);
+                        $('#target').val(target);
                         $('#privilege').val(privilege);
                         $('.modal-title').html("<i class='fa fa-plus'></i> Edit Record");
                         $('#action').val('UPDATE');

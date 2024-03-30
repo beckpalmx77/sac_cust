@@ -1,20 +1,19 @@
 <?php
 session_start();
 error_reporting(0);
-include('config/connect_db.php');
+include('config/connect_db_cust.php');
+include('config/connect_db_sac.php');
 include('config/lang.php');
-
 
 if ($_SESSION['alogin'] != '') {
     $_SESSION['alogin'] = '';
 }
 
-
 $username = $_POST['username'];
 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 $remember = $_POST['remember'];
 $sql = "SELECT *,pm.dashboard_page as dashboard_page,slt.SLT_CODE,slt.SLT_NAME FROM ims_user  
-        left join ims_slteam slt  on slt.SLT_KEY = ims_user.manage_team_id         
+        left join ims_slteam slt  on slt.SLT_KEY = ims_user.manage_team_id             
         left join ims_permission pm on pm.permission_id = ims_user.account_type WHERE email=:username ";
 
 $query = $conn->prepare($sql);
@@ -27,6 +26,8 @@ if ($query->rowCount() == 1) {
         if (password_verify($_POST['password'], $result->password)) {
             $_SESSION['alogin'] = $result->email;
             $_SESSION['user_id'] = $result->user_id;
+            $_SESSION['customer_id'] = $result->customer_id;
+            $_SESSION['customer_name_th'] = $result->customer_name;
             $_SESSION['login_id'] = $result->id;
             $_SESSION['username'] = $result->email;
             $_SESSION['first_name'] = $result->first_name;
@@ -40,9 +41,23 @@ if ($query->rowCount() == 1) {
             $_SESSION['SLT_CODE'] = $result->SLT_CODE;
             $_SESSION['SLT_NAME'] = $result->SLT_NAME;
             $_SESSION['manage_team_id'] = $result->manage_team_id;
-            //$_SESSION['dashboard_page'] = $result->dashboard_page . ".php";
             $_SESSION['dashboard_page'] = $result->dashboard_page;
             $_SESSION['system_name'] = $system_name;
+
+            $sql_sac = "SELECT * FROM ims_customer_ar WHERE customer_id=:customer_id ";
+            $query_sac = $conn_sac->prepare($sql_sac);
+            $query_sac->bindParam(':customer_id', $result->customer_id, PDO::PARAM_STR);
+            $query_sac->execute();
+            $results_sac = $query_sac->fetchAll(PDO::FETCH_OBJ);
+
+            if ($query_sac->rowCount() == 1) {
+                foreach ($results_sac as $result_sac) {
+                    $_SESSION['customer_name'] = $result_sac->f_name;
+                }
+            } else {
+                $_SESSION['customer_name'] = $_SESSION['account_type'];
+                $_SESSION['customer_id'] = "SAC";
+            }
 
 
             if ($remember == "on") { // ถ้าติ๊กถูก Login ตลอดไป ให้ทำการสร้าง cookie

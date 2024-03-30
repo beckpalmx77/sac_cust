@@ -51,6 +51,12 @@ $empQuery = "select * from ims_product_price WHERE 1 ".$searchQuery." order by "
 $empRecords = mysqli_query($con, $empQuery);
 $data = array();
 
+/*
+$myfile = fopen("search-qry.txt", "w") or die("Unable to open file!");
+fwrite($myfile, $empQuery);
+fclose($myfile);
+*/
+
 while ($row = mysqli_fetch_assoc($empRecords)) {
     $price_special = $row['price_1'];
     $data[] = array(

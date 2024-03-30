@@ -155,10 +155,11 @@ if ($_POST["action"] === 'GET_PRODUCT') {
     $searchByName1 = $_POST['searchByName1'];
     $searchByName2 = $_POST['searchByName2'];
     $searchByName3 = $_POST['searchByName3'];
-
+/*
     $myfile = fopen("search-qry.txt", "w") or die("Unable to open file!");
     fwrite($myfile, $searchByName1 . " | " . $searchByName2 . " | " . $searchByName3 );
     fclose($myfile);
+*/
 
     $rowperpage = $_POST['length']; // Rows display per page
     $columnIndex = $_POST['order'][0]['column']; // Column index

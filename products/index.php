@@ -62,7 +62,7 @@ if (strlen($_SESSION['alogin']) == "") {
     <!-- Login Content -->
     <div class="container-login">
         <div class="row justify-content-center">
-            <div class="col-xl-8 col-lg-12 col-md-12">
+            <div class="col-xl-9 col-lg-12 col-md-12">
                 <div class="card shadow-sm my-6">
                     <div class="card-body p-0">
                         <div class="row">
@@ -75,11 +75,11 @@ if (strlen($_SESSION['alogin']) == "") {
 
                                             <nav class="navbar navbar-light bg-light">
                                                 <form class="form-inline">
-                                                    <button class="btn btn-outline-info" id='BtnBack' name='BtnBack'
+                                                    <!--button class="btn btn-outline-info" id='BtnBack' name='BtnBack'
                                                             type="button">กลับหน้าหลัก
-                                                    </button>
+                                                    </button-->
                                                     <button class="btn btn-outline-danger" id='BtnExit' name='BtnExit'
-                                                            type="button">ออกจากระบบ
+                                                            type="button">ปิดหน้าต่าง
                                                     </button>
                                                 </form>
                                             </nav>
@@ -95,45 +95,76 @@ if (strlen($_SESSION['alogin']) == "") {
                                             <tr>
                                                 <th> หน้ากว้างยาง</th>
                                                 <th> แก้มยาง</th>
-                                                <th> เส้นผ่านศูนย์กลางกระทะล้อ</th>
+                                                <th> ขนาดกระทะล้อ</th>
+                                                <th> ยี่ห้อ</th>
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <select id='searchByName1' class="form-control ">
+                                                    <select id='searchByName1' name='searchByName1'
+                                                            class="form-control ">
                                                         <option value="">All</option>
+                                                        <option value="155"> 155</option>
                                                         <option value="165"> 165</option>
                                                         <option value="175"> 175</option>
                                                         <option value="185"> 185</option>
                                                         <option value="195"> 195</option>
-
+                                                        <option value="205"> 205</option>
+                                                        <option value="215"> 215</option>
+                                                        <option value="225"> 225</option>
+                                                        <option value="235"> 235</option>
+                                                        <option value="245"> 245</option>
+                                                        <option value="255"> 255</option>
+                                                        <option value="265"> 265</option>
+                                                        <option value="275"> 275</option>
+                                                        <option value="285"> 285</option>
+                                                        <option value="295"> 295</option>
+                                                        <option value="305"> 305</option>
+                                                        <option value="315"> 315</option>
+                                                        <option value="325"> 325</option>
+                                                        <option value="345"> 345</option>
+                                                        <option value="365"> 365</option>
                                                     </select>
                                                 </td>
                                                 <td>
                                                     <!--input type='text' id="searchByName1"  class="form-control " placeholder='Enter R'></td><td-->
-                                                    <select id="searchByName2" class="form-control " required="">
+                                                    <select id="searchByName2" name='searchByName2'
+                                                            class="form-control " required="">
                                                         <option value="">All</option>
+                                                        <option value="45"> 45</option>
                                                         <option value="50"> 50</option>
                                                         <option value="55"> 55</option>
                                                         <option value="60"> 60</option>
                                                         <option value="65"> 65</option>
+                                                        <option value="70"> 70</option>
                                                         <option value="75"> 75</option>
+                                                        <option value="80"> 80</option>
                                                         <option value="85"> 85</option>
                                                     </select>
                                                 </td>
                                                 <td>
-                                                    <select id='searchByName3' class="form-control ">
-
+                                                    <select id='searchByName3' name='searchByName3'
+                                                            class="form-control ">
                                                         <option value="">All</option>
-                                                        <option value="14"> 14</option>
-                                                        <option value="15"> 15</option>
-                                                        <option value="16"> 16</option>
-                                                        <option value="17"> 17</option>
-                                                        <option value="18"> 18</option>
-                                                        <option value="19"> 19</option>
-                                                        <option value="20"> 20</option>
-                                                        <option value="20"> 21</option>
-                                                        <option value="22"> 22</option>
-
+                                                        <option value="R13"> R13</option>
+                                                        <option value="R14"> R14</option>
+                                                        <option value="R15"> R15</option>
+                                                        <option value="R16"> R16</option>
+                                                        <option value="R17"> R17</option>
+                                                        <option value="R18"> R18</option>
+                                                        <option value="R19"> R19</option>
+                                                        <option value="R20"> R20</option>
+                                                        <option value="R20"> R21</option>
+                                                        <option value="R22"> R22</option>
+                                                        <option value="R24"> R24</option>
+                                                        <option value="R26"> R26</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <select id='searchByNameBrn' name='searchByNameBrn'
+                                                            class="form-control ">
+                                                        <option value="">All</option>
+                                                        <option value="LITT"> LITT</option>
+                                                        <option value="LE"> LE</option>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -150,8 +181,11 @@ if (strlen($_SESSION['alogin']) == "") {
                                                 <th>ยี่ห้อ</th>
                                                 <th>ปียาง</th>
                                                 <th>ราคาปกติ</th>
-                                                <th>ราคาพิเศษ</th>
-                                                <th>สถานะ</th>
+                                                <th>ราคาช่อง 1</th>
+                                                <th>ราคาช่อง 2</th>
+                                                <th>ราคาช่อง 3</th>
+                                                <th>ราคาช่อง 4</th>
+                                                <th>ราคาช่อง 5</th>
                                             </tr>
                                             </thead>
 
@@ -194,7 +228,7 @@ if (strlen($_SESSION['alogin']) == "") {
 
                                                 ], "language":
                                                     {
-                                                        "processing": "<img style='width:300px; height:200px;' src='load.gif' />",
+                                                        "processing": "<img style='width:65px; height:65px;' src='load.gif' />",
                                                     },
 
                                                 'ajax': {
@@ -204,11 +238,11 @@ if (strlen($_SESSION['alogin']) == "") {
                                                         let searchByName3 = $('#searchByName3').val();
                                                         let searchByName2 = $('#searchByName2').val();
                                                         let searchByName1 = $('#searchByName1').val();
-
-
+                                                        let searchByNameBrn = $('#searchByNameBrn').val();
                                                         data.searchByName3 = searchByName3;
                                                         data.searchByName2 = searchByName2;
                                                         data.searchByName1 = searchByName1;
+                                                        data.searchByNameBrn = searchByNameBrn;
                                                     }
                                                 },
                                                 'columns': [
@@ -217,8 +251,11 @@ if (strlen($_SESSION['alogin']) == "") {
                                                     {data: 'brand_id'},
                                                     {data: 'price_year'},
                                                     {data: 'price_normal'},
-                                                    {data: 'price_special'},
-                                                    {data: 'status'},
+                                                    {data: 'price_special1'},
+                                                    {data: 'price_special2'},
+                                                    {data: 'price_special3'},
+                                                    {data: 'price_special4'},
+                                                    {data: 'price_special5'},
                                                 ]
 
                                             });
@@ -235,6 +272,9 @@ if (strlen($_SESSION['alogin']) == "") {
                                                 dataTable.draw();
                                             });
                                             $('#searchByName3').change(function () {
+                                                dataTable.draw();
+                                            });
+                                            $('#searchByNameBrn').change(function () {
                                                 dataTable.draw();
                                             });
                                         });
@@ -266,17 +306,22 @@ if (strlen($_SESSION['alogin']) == "") {
 
     <script>
         function back() {
-            window.location = "../Dashboard_admin.php"
+            let url = '<?php echo "../" . $_SESSION['dashboard_page'] ?>';
+            window.location = url;
         }
     </script>
+
+    <!--script>
+        function Exit() {
+            window.location = "../login";
+        }
+    </script-->
 
     <script>
         function Exit() {
-            window.location = "../login.php"
+            window.close();
         }
     </script>
-
-    login.php
 
     </body>
     </html>

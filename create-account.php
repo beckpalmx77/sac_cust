@@ -25,7 +25,8 @@ if (strlen($_SESSION['alogin']) == "") {
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800"><?php echo urldecode($_GET['s']) ?></h1>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="<?php echo $_SESSION['dashboard_page']?>">Home</a></li>
+                            <li class="breadcrumb-item"><a href="<?php echo $_SESSION['dashboard_page'] ?>">Home</a>
+                            </li>
                             <li class="breadcrumb-item"><?php echo urldecode($_GET['m']) ?></li>
                             <li class="breadcrumb-item active"
                                 aria-current="page"><?php echo urldecode($_GET['s']) ?></li>
@@ -48,12 +49,11 @@ if (strlen($_SESSION['alogin']) == "") {
 
                                                             <div class="form-group has-success">
                                                                 <label for="success" class="control-label">ชื่อผู้ใช้
-                                                                    User
-                                                                    Name (Email Address)</label>
+                                                                    User Name</label>
                                                                 <div class="">
-                                                                    <input type="email" name="email"
+                                                                    <input type="text" name="email"
                                                                            class="form-control"
-                                                                           required="required" id="email">
+                                                                           required="required" id="email" value="">
                                                                 </div>
                                                             </div>
 
@@ -63,7 +63,7 @@ if (strlen($_SESSION['alogin']) == "") {
                                                                 <div class="">
                                                                     <input type="text" name="first_name"
                                                                            class="form-control"
-                                                                           required="required" id="first_name">
+                                                                           required="required" id="first_name" value="">
                                                                 </div>
                                                             </div>
 
@@ -73,7 +73,7 @@ if (strlen($_SESSION['alogin']) == "") {
                                                                 <div class="">
                                                                     <input type="text" name="last_name"
                                                                            class="form-control"
-                                                                           required="required" id="last_name">
+                                                                           id="last_name" value="">
                                                                 </div>
                                                             </div>
 
@@ -90,7 +90,8 @@ if (strlen($_SESSION['alogin']) == "") {
 
                                                             <div class="form-group has-success">
                                                                 <label class="control-label" for="select-testing">ประเภทผู้ใช้
-                                                                    Account Type (Administrator = สิทธิ์จัดการระบบ)</label>
+                                                                    Account Type (Administrator =
+                                                                    สิทธิ์จัดการระบบ)</label>
 
                                                                 <div class=”form-group”>
                                                                     <select id="account_type" name="account_type"
@@ -224,7 +225,7 @@ if (strlen($_SESSION['alogin']) == "") {
                 data: formData,
                 success: function (response) {
                     if (response > 0) {
-                        alertify.error("มี User Email นี้ในระบบแล้วโปรดใช้ User อื่น");
+                        alertify.error("มี User นี้ในระบบแล้วโปรดใช้ User อื่น");
                         $('#email').val("");
                     }
                 },
@@ -232,20 +233,6 @@ if (strlen($_SESSION['alogin']) == "") {
                     alertify.error("error : " + response);
                 }
             });
-        });
-
-    </script>
-
-    <script>
-
-        $('#email').focusout(function () {
-            let email_address = $('#email').val();
-            if (ValidateEmail(email_address)) {
-                $('#email').val(email_address);
-            } else {
-                alertify.error("กรุณาป้อน รูปแบบ Email ที่ถูกต้อง");
-                $('#email').val("");
-            }
         });
 
     </script>

@@ -62,10 +62,13 @@ if (strlen($_SESSION['alogin']) == "") {
                                                                 <label for="success" class="control-label">รหัสผ่าน
                                                                     ปัจจุบัน
                                                                     Current Password</label>
+                                                                <span class="far fa-eye toggleeye" id="togglePassword"
+                                                                      style="cursor: pointer;"></span>
                                                                 <div class="">
                                                                     <input type="password" name="password"
                                                                            class="form-control"
                                                                            required="required" id="password">
+
                                                                 </div>
                                                             </div>
                                                             <div class="form-group has-success">
@@ -192,6 +195,15 @@ if (strlen($_SESSION['alogin']) == "") {
 
         });
 
+    </script>
+
+    <script type='text/javascript'>
+        $(document).ready(function () {
+            $('#togglePassword').click(function () {
+                //alert($(this).is(':checked'));
+                $('#password').attr('type') === 'password' ? $('#password').attr('type', 'text') : $('#password').attr('type', 'password');
+            });
+        });
     </script>
 
     </body>

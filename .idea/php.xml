@@ -67,6 +67,13 @@
       <path value="$PROJECT_DIR$/vendor/paragonie/constant_time_encoding" />
       <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
       <path value="$PROJECT_DIR$/vendor/php-amqplib/php-amqplib" />
+      <path value="$PROJECT_DIR$/vendor/PhpAmqpLib/Wire" />
+      <path value="$PROJECT_DIR$/vendor/PhpAmqpLib/Message" />
+      <path value="$PROJECT_DIR$/vendor/PhpAmqpLib/Helper" />
+      <path value="$PROJECT_DIR$/vendor/PhpAmqpLib/Exchange" />
+      <path value="$PROJECT_DIR$/vendor/PhpAmqpLib/Exception" />
+      <path value="$PROJECT_DIR$/vendor/PhpAmqpLib/Connection" />
+      <path value="$PROJECT_DIR$/vendor/PhpAmqpLib/Channel" />
     </include_path>
   </component>
   <component name="PhpProjectServersManager">
