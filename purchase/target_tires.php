@@ -8,7 +8,7 @@ if (strlen($_SESSION['alogin']) == "") {
 } else {
 
     $sql_year = " SELECT DISTINCT(DI_YEAR) AS DI_YEAR
-    FROM ims_product_sale_sac WHERE DI_YEAR >= 2000
+    FROM ims_product_sale_sac WHERE DI_YEAR >= 2000 AND AR_CODE = '" . $_SESSION['customer_id'] . "'
     order by DI_YEAR desc ";
     $stmt_year = $conn_sac->prepare($sql_year);
     $stmt_year->execute();
@@ -258,12 +258,14 @@ if (strlen($_SESSION['alogin']) == "") {
                                                         let searchByName1 = $('#searchByName1').val();
                                                         let account_type = $('#account_type').val();
                                                         let customer_id = $('#customer_id').val();
+                                                        let di_year = $('#year').val();
 
                                                         data.searchByName3 = searchByName3;
                                                         data.searchByName2 = searchByName2;
                                                         data.searchByName1 = searchByName1;
                                                         data.account_type = account_type;
                                                         data.customer_id = customer_id;
+                                                        data.di_year = di_year;
                                                     }
                                                 },
                                                 'columns': [
