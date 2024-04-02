@@ -7,15 +7,15 @@ if (strlen($_SESSION['alogin']) == "") {
     header("Location: index.php");
 } else {
 
-    $cond_customer ="";
+    $cond_customer = "";
 
-    if ($_SESSION['account_type']=="customer") {
+    if ($_SESSION['account_type'] == "customer") {
         $cond_customer = "AND AR_CODE = '" . $_SESSION['customer_id'] . "'";
     }
 
     $sql_year = " SELECT DISTINCT(DI_YEAR) AS DI_YEAR
     FROM ims_product_sale_sac WHERE DI_YEAR >= 2000 " . $cond_customer
-    . " order by DI_YEAR desc ";
+        . " order by DI_YEAR desc ";
     $stmt_year = $conn_sac->prepare($sql_year);
     $stmt_year->execute();
     $YearRecords = $stmt_year->fetchAll();

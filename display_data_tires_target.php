@@ -88,46 +88,47 @@ if (strlen($_SESSION['alogin']) == "") {
                                                                             <?php
 
                                                                             if ($_SESSION['account_type'] === "customer") { ?>
-                                                                                <input type="hidden" name="AR_CODE" id="AR_CODE"
+                                                                                <input type="hidden" name="AR_CODE"
+                                                                                       id="AR_CODE"
                                                                                        value="<?php echo $_SESSION['customer_id'] ?>"
                                                                                        class="form-control">
-                                                                                <input type="text" name="AR_NAME" id="AR_NAME"
+                                                                                <input type="text" name="AR_NAME"
+                                                                                       id="AR_NAME"
                                                                                        value="<?php echo $_SESSION['customer_name'] ?>"
-                                                                                       readonly="true" class="form-control">
-                                                                            <?php } else { ?>
-                                                                                <label for="AR_CODE">เลือกลูกค้า :</label>
-                                                                                <input type="hidden" name="AR_CODE" id="AR_CODE"
+                                                                                       readonly="true"
                                                                                        class="form-control">
-                                                                                <select id='selCustomer' class='form-control'
+                                                                            <?php } else { ?>
+                                                                                <label for="AR_CODE">เลือกลูกค้า
+                                                                                    :</label>
+                                                                                <input type="hidden" name="AR_CODE"
+                                                                                       id="AR_CODE"
+                                                                                       class="form-control">
+                                                                                <select id='selCustomer'
+                                                                                        class='form-control'
                                                                                         onchange="Onchange_Customer_id();">
-                                                                                    <option value='0'>- ค้นหารายชื่อลูกค้า -
+                                                                                    <option value='0'>-
+                                                                                        ค้นหารายชื่อลูกค้า -
                                                                                     </option>
                                                                                 </select>
+                                                                                <br>
                                                                             <?php } ?>
                                                                             <br>
                                                                             <div class="row">
                                                                                 <div class="col-sm-12">
                                                                                     <button type="button" id="BtnSale"
                                                                                             name="BtnSale"
-                                                                                            class="btn btn-primary mb-3">แสดงยอด
+                                                                                            class="btn btn-primary mb-3">
+                                                                                        แสดงยอด
                                                                                     </button>
                                                                                 </div>
                                                                             </div>
 
                                                                         </div>
                                                                     </div>
-
                                                                 </div>
-
-
                                                             </div>
-
-
                                                         </form>
-
-
                                                         <div id="result"></div>
-
                                                     </div>
                                                 </div>
                                             </div>
