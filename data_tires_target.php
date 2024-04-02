@@ -6,11 +6,24 @@ $month = "";
 $month_name = "";
 $year = "";
 
-$year = $_POST['year'];
+// $year = $_POST['year'];
 $AR_CODE = $_POST['AR_CODE'];
 $customer_name = $_POST['cust_name'];
 
 //$doc_date = substr($_POST['doc_date'], 6, 4) . "/" . substr($_POST['doc_date'], 3, 2) . "/" . substr($_POST['doc_date'], 0, 2);
+
+$doc_date_start = substr($_POST['doc_date_start'], 6, 4) . "-" . substr($_POST['doc_date_start'], 3, 2) . "-" . substr($_POST['doc_date_start'], 0, 2);
+$doc_date_to = substr($_POST['doc_date_to'], 6, 4) . "-" . substr($_POST['doc_date_to'], 3, 2) . "-" . substr($_POST['doc_date_to'], 0, 2);
+
+if ($doc_date_start !== "" && $doc_date_to !== "") {
+    $where_date = " AND STR_TO_DATE(DI_DATE, '%d/%m/%Y') BETWEEN '" . $doc_date_start . "' AND '" . $doc_date_to . "'";
+}
+
+/*
+$myfile = fopen("search-qry-tires.txt", "w") or die("Unable to open file!");
+fwrite($myfile, $doc_date_start . " | " . $doc_date_to);
+fclose($myfile);
+*/
 
 /*
 $month = $_POST['month'];
@@ -66,7 +79,7 @@ foreach ($MonthCurr as $row_curr) {
         แสดงยอดขายยางแต่ละยี่ห้อ <?php echo "[ " . $AR_CODE . " " . $customer_name . " ]"; ?>
     </div>
     <input type="hidden" name="month" id="month" value="<?php echo $month; ?>">
-    <input type="hidden" name="year" id="year" value="<?php echo $year; ?>">
+    <!--input type="hidden" name="year" id="year" value="<?php echo $year; ?>"-->
     <div class="card-body">
         <div id="chart-container">
         </div>
@@ -104,17 +117,17 @@ foreach ($MonthCurr as $row_curr) {
 
                     $sql_tires = " SELECT BRN_CODE, '" . $tr_size . "' AS TIRES_SIZE,DI_MONTH_NAME,DI_YEAR As DI_YEAR,SUM(TRD_QTY) as TRD_QTY 
                            FROM ims_product_sale_sac 
-                           WHERE AR_CODE = '" . $AR_CODE . "' AND BRN_CODE = '" . $tr_brand . "' AND SKU_NAME LIKE '%" . $tr_size . "%'" . " 
-                           AND DI_YEAR = '" . $year . "'" . "
+                           WHERE AR_CODE = '" . $AR_CODE . "' AND BRN_CODE = '" . $tr_brand . "' AND SKU_NAME LIKE '%" . $tr_size . "%'"
+                           . $where_date . "
                            GROUP BY BRN_CODE,DI_MONTH,DI_YEAR 
                            HAVING SUM(TRD_QTY)>0
-                           ORDER BY BRN_CODE,DI_YEAR DESC ,DI_MONTH DESC  ";
+                           ORDER BY BRN_CODE,CAST(DI_YEAR AS UNSIGNED) DESC , CAST(DI_MONTH AS UNSIGNED) DESC    ";
 
-                    /*
+/*
                     $myfile = fopen("search-qry-tires.txt", "w") or die("Unable to open file!");
                     fwrite($myfile, $sql_tires);
-                    fclose($myfile); */
-
+                    fclose($myfile);
+*/
 
                     $statement_tires = $conn_sac->query($sql_tires);
                     $results_tires = $statement_tires->fetchAll(PDO::FETCH_ASSOC);

@@ -103,8 +103,8 @@ if (strlen($_SESSION['alogin']) == "") {
                                 </div>
                                 <div class="modal-body">
                                     <div class="form-group"
-                                    <label for="email" class="control-label">Email</label>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="email"
+                                    <label for="email" class="control-label">รหัสผู้ใช้</label>
+                                    <input type="text" class="form-control" id="email" name="email" placeholder="email"
                                            required>
                                 </div>
 

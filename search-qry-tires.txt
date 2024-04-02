@@ -1,7 +1,0 @@
- SELECT BRN_CODE, 'R22' AS TIRES_SIZE,DI_MONTH_NAME,DI_YEAR As DI_YEAR,SUM(TRD_QTY) as TRD_QTY 
-                           FROM ims_product_sale_sac 
-                           WHERE AR_CODE = 'SAC0377' AND BRN_CODE = 'LL' AND SKU_NAME LIKE '%R22%' 
-                           AND DI_YEAR = '2024'
-                           GROUP BY BRN_CODE,DI_MONTH,DI_YEAR 
-                           HAVING SUM(TRD_QTY)>0
-                           ORDER BY BRN_CODE,DI_YEAR DESC ,DI_MONTH DESC  

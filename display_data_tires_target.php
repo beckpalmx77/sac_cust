@@ -76,8 +76,38 @@ if (strlen($_SESSION['alogin']) == "") {
                                                     <div class="panel-body">
 
                                                         <form id="myform" name="myform" method="post">
-                                                            <input type="hidden" id="cust_id" name = "cust_id" value="<?php echo $_SESSION['customer_id']?>">
-                                                            <input type="hidden" id= "cust_name" name = "cust_name" value="<?php echo $_SESSION['customer_name']?>">
+                                                            <input type="hidden" id="cust_id" name="cust_id"
+                                                                   value="<?php echo $_SESSION['customer_id'] ?>">
+                                                            <input type="hidden" id="cust_name" name="cust_name"
+                                                                   value="<?php echo $_SESSION['customer_name'] ?>">
+                                                            <div class="row">
+                                                                <div class="col-sm-3">
+                                                                    <label for="doc_date_start"
+                                                                           class="control-label">จากวันที่</label>
+                                                                    <i class="fa fa-calendar"
+                                                                       aria-hidden="true"></i>
+                                                                    <input type="text" class="form-control"
+                                                                           id="doc_date_start"
+                                                                           name="doc_date_start"
+                                                                           required="required"
+                                                                           readonly="true"
+                                                                           placeholder="จากวันที่">
+                                                                </div>
+
+                                                                <div class="col-sm-3">
+                                                                    <label for="doc_date_to"
+                                                                           class="control-label">ถึงวันที่</label>
+                                                                    <i class="fa fa-calendar"
+                                                                       aria-hidden="true"></i>
+                                                                    <input type="text" class="form-control"
+                                                                           id="doc_date_to"
+                                                                           name="doc_date_to"
+                                                                           required="required"
+                                                                           readonly="true"
+                                                                           placeholder="ถึงวันที่">
+                                                                </div>
+                                                            </div>
+                                                            <br>
                                                             <div class="row">
                                                                 <div class="col-sm-12">
                                                                     <?php
@@ -100,7 +130,7 @@ if (strlen($_SESSION['alogin']) == "") {
                                                                         </select>
                                                                     <?php } ?>
 
-                                                                    <br>
+                                                                    <!--br>
                                                                     <label for="year">เลือกปี :</label>
                                                                     <select name="year" id="year" class="form-control"
                                                                             required>
@@ -109,7 +139,7 @@ if (strlen($_SESSION['alogin']) == "") {
                                                                                 <?php echo $row["DI_YEAR"]; ?>
                                                                             </option>
                                                                         <?php } ?>
-                                                                    </select>
+                                                                    </select-->
                                                                     <br>
                                                                     <div class="row">
                                                                         <div class="col-sm-12">
@@ -197,6 +227,37 @@ if (strlen($_SESSION['alogin']) == "") {
     <script src="js/MyFrameWork/framework_util.js"></script>
 
     <script>
+        $(document).ready(function () {
+            let today = new Date();
+            let doc_date = getDay2Digits(today) + "-" + getMonth2Digits(today) + "-" + today.getFullYear();
+            $('#doc_date_start').val(doc_date);
+            $('#doc_date_to').val(doc_date);
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('#doc_date_start').datepicker({
+                format: "dd-mm-yyyy",
+                todayHighlight: true,
+                language: "th",
+                autoclose: true
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('#doc_date_to').datepicker({
+                format: "dd-mm-yyyy",
+                todayHighlight: true,
+                language: "th",
+                autoclose: true
+            });
+        });
+    </script>
+
+    <script>
 
         $("#BtnSale").click(function () {
             document.forms['myform'].action = 'data_tires_target';
@@ -235,10 +296,10 @@ if (strlen($_SESSION['alogin']) == "") {
 
     <script>
 
-    function Onchange_Customer_id() {
-        let customer_id = $('#selCustomer').val();
-        $('#AR_CODE').val(customer_id);
-    }
+        function Onchange_Customer_id() {
+            let customer_id = $('#selCustomer').val();
+            $('#AR_CODE').val(customer_id);
+        }
     </script>
 
 
