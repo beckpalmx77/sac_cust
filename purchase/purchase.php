@@ -13,6 +13,7 @@ $searchValue = $_POST['search']['value']; // Search value
 ## Custom Field value
 $account_type = $_POST['account_type'];
 $customer_id = $_POST['customer_id'];
+$di_year = $_POST['di_year'];
 $searchByName1 = $_POST['searchByName1'];
 $searchByName2 = $_POST['searchByName2'];
 $searchByName3 = $_POST['searchByName3'];
@@ -33,6 +34,10 @@ if($searchByName3 != ''){
 
 if ($account_type == "customer") {
     $searchQuery .= " and (AR_CODE  = '". $customer_id ."') ";
+}
+
+if($di_year != ''){
+    $searchQuery .= " and (DI_YEAR  = '".$di_year."') ";
 }
 
 if($searchValue != ''){

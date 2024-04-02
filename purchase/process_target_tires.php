@@ -37,7 +37,7 @@ if ($account_type == "customer") {
 }
 
 if($di_year != ''){
-    $searchQuery .= " and (DI_YEAR  like '%".$di_year."%') ";
+    $searchQuery .= " and (DI_YEAR  = '".$di_year."') ";
 }
 
 if($searchValue != ''){
@@ -47,9 +47,18 @@ if($searchValue != ''){
     BRN_NAME like'%".$searchValue."%' ) ";
 }
 
+
+$size = "'" . $searchByName3 . "'";
+
+$sql_qry = " SELECT BRN_CODE," . $size . " AS TIRES_SIZE,DI_MONTH_NAME,DI_YEAR As DI_YEAR,SUM(TRD_QTY) as TRD_QTY FROM ims_product_sale_sac 
+WHERE AR_CODE = '" . $customer_id . "' AND SKU_NAME LIKE '%" . $searchByName3 . "%' " . "
+GROUP BY BRN_CODE,DI_MONTH,DI_YEAR 
+HAVING SUM(TRD_QTY)>0
+ORDER BY BRN_CODE,DI_YEAR DESC ,DI_MONTH DESC ";
+
 /*
 $myfile = fopen("search-qry-cond.txt", "w") or die("Unable to open file!");
-fwrite($myfile, $searchQuery);
+fwrite($myfile, $sql_qry);
 fclose($myfile);
 */
 

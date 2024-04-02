@@ -1,11 +1,27 @@
 <?php
 include('../includes/Header.php');
 
+include("../config/connect_db_sac.php");
+
 if (strlen($_SESSION['alogin']) == "") {
     header("Location: index.php");
 } else {
 
+    $cond_customer ="";
+
+    if ($_SESSION['account_type']=="customer") {
+        $cond_customer = "AND AR_CODE = '" . $_SESSION['customer_id'] . "'";
+    }
+
+    $sql_year = " SELECT DISTINCT(DI_YEAR) AS DI_YEAR
+    FROM ims_product_sale_sac WHERE DI_YEAR >= 2000 " . $cond_customer
+    . " order by DI_YEAR desc ";
+    $stmt_year = $conn_sac->prepare($sql_year);
+    $stmt_year->execute();
+    $YearRecords = $stmt_year->fetchAll();
+
     ?>
+
     <!DOCTYPE html>
     <html lang="th">
 
@@ -103,6 +119,16 @@ if (strlen($_SESSION['alogin']) == "") {
                                                 <th> ขนาดกระทะล้อ</th>
                                             </tr>
                                             <tr>
+                                                <td>
+                                                    <select name="year" id="year" class="form-control"
+                                                            required>
+                                                        <?php foreach ($YearRecords as $row) { ?>
+                                                            <option value="<?php echo $row["DI_YEAR"]; ?>">
+                                                                <?php echo $row["DI_YEAR"]; ?>
+                                                            </option>
+                                                        <?php } ?>
+                                                    </select>
+                                                </td>
                                                 <td>
                                                     <select id='searchByName1' name='searchByName1'
                                                             class="form-control ">
@@ -230,12 +256,14 @@ if (strlen($_SESSION['alogin']) == "") {
                                                         let searchByName3 = $('#searchByName3').val();
                                                         let searchByName2 = $('#searchByName2').val();
                                                         let searchByName1 = $('#searchByName1').val();
+                                                        let di_year = $('#year').val();
                                                         let account_type = $('#account_type').val();
                                                         let customer_id = $('#customer_id').val();
 
                                                         data.searchByName3 = searchByName3;
                                                         data.searchByName2 = searchByName2;
                                                         data.searchByName1 = searchByName1;
+                                                        data.di_year = di_year;
                                                         data.account_type = account_type;
                                                         data.customer_id = customer_id;
                                                     }
@@ -263,6 +291,9 @@ if (strlen($_SESSION['alogin']) == "") {
                                                 dataTable.draw();
                                             });
                                             $('#searchByName3').change(function () {
+                                                dataTable.draw();
+                                            });
+                                            $('#year').change(function () {
                                                 dataTable.draw();
                                             });
                                         });
