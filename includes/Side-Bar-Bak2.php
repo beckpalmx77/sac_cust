@@ -84,7 +84,7 @@ include('config/lang.php');
                                         $result_subs = $query_sub_menu->fetchAll(PDO::FETCH_OBJ);
 
                                         foreach ($result_subs as $result_sub) {
-                                            $sub_menu = $_SESSION['lang'] === "th" ? $result_sub->label : $result_sub->label_en;
+                                            $sub_menu = $_SESSION['lang'] == "th" ? $result_sub->label : $result_sub->label_en;
                                             ?>
                                             <a class="collapse-item"
                                                href="<?php echo $result_sub->link . '?m=' . urlencode($main_menu) . '&s=' . urlencode($sub_menu)?>"

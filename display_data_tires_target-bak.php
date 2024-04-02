@@ -1,8 +1,38 @@
 <?php
 include('includes/Header.php');
 if (strlen($_SESSION['alogin']) == "") {
-    header("Location: index.php");
+    header("Location: index");
 } else {
+
+    include("config/connect_db_sac.php");
+
+    $month_num = str_replace('0', '', date('m'));
+
+    $sql_curr_month = " SELECT * FROM ims_month where month = '" . $month_num . "'";
+
+    $stmt_curr_month = $conn_sac->prepare($sql_curr_month);
+    $stmt_curr_month->execute();
+    $MonthCurr = $stmt_curr_month->fetchAll();
+    foreach ($MonthCurr as $row_curr) {
+        $month_name = $row_curr["month_name"];
+    }
+
+    //$myfile = fopen("param.txt", "w") or die("Unable to open file!");
+    //fwrite($myfile, "month_num = " . $month_num . "| month_name" . $month_name . " | " . $sql_curr_month);
+    //fclose($myfile);
+
+    $sql_month = " SELECT * FROM ims_month ";
+    $stmt_month = $conn_sac->prepare($sql_month);
+    $stmt_month->execute();
+    $MonthRecords = $stmt_month->fetchAll();
+
+    $sql_year = " SELECT DISTINCT(DI_YEAR) AS DI_YEAR
+    FROM ims_product_sale_sac WHERE DI_YEAR >= 2000
+    order by DI_YEAR desc ";
+    $stmt_year = $conn_sac->prepare($sql_year);
+    $stmt_year->execute();
+    $YearRecords = $stmt_year->fetchAll();
+
     ?>
 
     <!DOCTYPE html>
@@ -50,84 +80,68 @@ if (strlen($_SESSION['alogin']) == "") {
                                                                    value="<?php echo $_SESSION['customer_id'] ?>">
                                                             <input type="hidden" id="cust_name" name="cust_name"
                                                                    value="<?php echo $_SESSION['customer_name'] ?>">
+                                                            <div class="row">
+                                                                <div class="col-sm-3">
+                                                                    <label for="doc_date_start"
+                                                                           class="control-label">จากวันที่</label>
+                                                                    <i class="fa fa-calendar"
+                                                                       aria-hidden="true"></i>
+                                                                    <input type="text" class="form-control"
+                                                                           id="doc_date_start"
+                                                                           name="doc_date_start"
+                                                                           required="required"
+                                                                           readonly="true"
+                                                                           placeholder="จากวันที่">
+                                                                </div>
 
-                                                            <div class="modal-body">
+                                                                <div class="col-sm-3">
+                                                                    <label for="doc_date_to"
+                                                                           class="control-label">ถึงวันที่</label>
+                                                                    <i class="fa fa-calendar"
+                                                                       aria-hidden="true"></i>
+                                                                    <input type="text" class="form-control"
+                                                                           id="doc_date_to"
+                                                                           name="doc_date_to"
+                                                                           required="required"
+                                                                           readonly="true"
+                                                                           placeholder="ถึงวันที่">
+                                                                </div>
+                                                            </div>
+                                                            <br>
+                                                            <div class="row">
+                                                                <div class="col-sm-12">
+                                                                    <?php
 
-                                                                <div class="modal-body">
-                                                                    <div class="form-group row">
-
-                                                                        <div class="col-sm-3">
-                                                                            <label for="doc_date_start"
-                                                                                   class="control-label">จากวันที่</label>
-                                                                            <i class="fa fa-calendar"
-                                                                               aria-hidden="true"></i>
-                                                                            <input type="text" class="form-control"
-                                                                                   id="doc_date_start"
-                                                                                   name="doc_date_start"
-                                                                                   required="required"
-                                                                                   readonly="true"
-                                                                                   placeholder="จากวันที่">
-                                                                        </div>
-
-                                                                        <div class="col-sm-3">
-                                                                            <label for="doc_date_to"
-                                                                                   class="control-label">ถึงวันที่</label>
-                                                                            <i class="fa fa-calendar"
-                                                                               aria-hidden="true"></i>
-                                                                            <input type="text" class="form-control"
-                                                                                   id="doc_date_to"
-                                                                                   name="doc_date_to"
-                                                                                   required="required"
-                                                                                   readonly="true"
-                                                                                   placeholder="ถึงวันที่">
-                                                                        </div>
-                                                                    </div>
-
+                                                                    if ($_SESSION['account_type'] === "customer") { ?>
+                                                                        <input type="hidden" name="AR_CODE" id="AR_CODE"
+                                                                               value="<?php echo $_SESSION['customer_id'] ?>"
+                                                                               class="form-control">
+                                                                        <input type="text" name="AR_NAME" id="AR_NAME"
+                                                                               value="<?php echo $_SESSION['customer_name'] ?>"
+                                                                               readonly="true" class="form-control">
+                                                                    <?php } else { ?>
+                                                                        <label for="AR_CODE">เลือกลูกค้า :</label>
+                                                                        <input type="hidden" name="AR_CODE" id="AR_CODE"
+                                                                               class="form-control">
+                                                                        <select id='selCustomer' class='form-control'
+                                                                                onchange="Onchange_Customer_id();">
+                                                                            <option value='0'>- ค้นหารายชื่อลูกค้า -
+                                                                            </option>
+                                                                        </select>
+                                                                    <?php } ?>
+                                                                    <br>
                                                                     <div class="row">
                                                                         <div class="col-sm-12">
-                                                                            <?php
-
-                                                                            if ($_SESSION['account_type'] === "customer") { ?>
-                                                                                <input type="hidden" name="AR_CODE" id="AR_CODE"
-                                                                                       value="<?php echo $_SESSION['customer_id'] ?>"
-                                                                                       class="form-control">
-                                                                                <input type="text" name="AR_NAME" id="AR_NAME"
-                                                                                       value="<?php echo $_SESSION['customer_name'] ?>"
-                                                                                       readonly="true" class="form-control">
-                                                                            <?php } else { ?>
-                                                                                <label for="AR_CODE">เลือกลูกค้า :</label>
-                                                                                <input type="hidden" name="AR_CODE" id="AR_CODE"
-                                                                                       class="form-control">
-                                                                                <select id='selCustomer' class='form-control'
-                                                                                        onchange="Onchange_Customer_id();">
-                                                                                    <option value='0'>- ค้นหารายชื่อลูกค้า -
-                                                                                    </option>
-                                                                                </select>
-                                                                            <?php } ?>
-                                                                            <br>
-                                                                            <div class="row">
-                                                                                <div class="col-sm-12">
-                                                                                    <button type="button" id="BtnSale"
-                                                                                            name="BtnSale"
-                                                                                            class="btn btn-primary mb-3">แสดงยอด
-                                                                                    </button>
-                                                                                </div>
-                                                                            </div>
-
+                                                                            <button type="button" id="BtnSale"
+                                                                                    name="BtnSale"
+                                                                                    class="btn btn-primary mb-3">แสดงยอด
+                                                                            </button>
                                                                         </div>
                                                                     </div>
 
                                                                 </div>
-
-
                                                             </div>
-
-
                                                         </form>
-
-
-                                                        <div id="result"></div>
-
                                                     </div>
                                                 </div>
                                             </div>
@@ -168,6 +182,7 @@ if (strlen($_SESSION['alogin']) == "") {
         <i class="fas fa-angle-up"></i>
     </a>
 
+    <!-- RuangAdmin Javascript -->
     <script src="js/myadmin.min.js"></script>
     <script src="js/util.js"></script>
     <script src="js/Calculate.js"></script>
@@ -176,25 +191,22 @@ if (strlen($_SESSION['alogin']) == "") {
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Select2 -->
+    <script src="vendor/select2/dist/js/select2.min.js"></script>
+
     <!-- select2 css -->
     <link href='js/select2/dist/css/select2.min.css' rel='stylesheet' type='text/css'>
 
     <!-- select2 script -->
     <script src='js/select2/dist/js/select2.min.js'></script>
+
     <!-- Bootstrap Datepicker -->
     <script src="vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
     <!-- Bootstrap Touchspin -->
     <script src="vendor/bootstrap-touchspin/js/jquery.bootstrap-touchspin.js"></script>
     <!-- ClockPicker -->
     <script src="vendor/clock-picker/clockpicker.js"></script>
-    <!-- RuangAdmin Javascript -->
-    <script src="js/myadmin.min.js"></script>
-    <!-- Javascript for this page -->
+
 
     <script src="vendor/date-picker-1.9/js/bootstrap-datepicker.js"></script>
     <script src="vendor/date-picker-1.9/locales/bootstrap-datepicker.th.min.js"></script>
@@ -202,8 +214,6 @@ if (strlen($_SESSION['alogin']) == "") {
     <link href="vendor/date-picker-1.9/css/bootstrap-datepicker.css" rel="stylesheet"/>
 
     <script src="js/MyFrameWork/framework_util.js"></script>
-
-    <script src="js/util.js"></script>
 
     <script>
         $(document).ready(function () {
@@ -279,6 +289,7 @@ if (strlen($_SESSION['alogin']) == "") {
             $('#AR_CODE').val(customer_id);
         }
     </script>
+
 
     </body>
 

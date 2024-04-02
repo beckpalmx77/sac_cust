@@ -55,7 +55,7 @@ foreach ($MonthCurr as $row_curr) {
     <style>
 
         body {
-            width: 800px;
+            width: 1024px;
             margin: 3rem auto;
         }
 
@@ -76,7 +76,7 @@ foreach ($MonthCurr as $row_curr) {
 <div class="card">
     <div class="card-header bg-success text-white">
         <i class="fa fa-bar-chart" aria-hidden="true"></i>
-        แสดงยอดขายยางแต่ละยี่ห้อ <?php echo "[ " . $AR_CODE . " " . $customer_name . " ]"; ?>
+        แสดงยอดขายยางแต่ละยี่ห้อ <?php echo "[ " . $AR_CODE . " " . $customer_name . " ] วันที่ " . $doc_date_start . " ถึง " . $doc_date_to  ; ?>
     </div>
     <input type="hidden" name="month" id="month" value="<?php echo $month; ?>">
     <!--input type="hidden" name="year" id="year" value="<?php echo $year; ?>"-->
