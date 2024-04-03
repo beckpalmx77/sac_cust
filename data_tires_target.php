@@ -8,7 +8,6 @@ $year = "";
 
 // $year = $_POST['year'];
 $AR_CODE = $_POST['AR_CODE'];
-$customer_name = $_POST['cust_name'];
 
 //$doc_date = substr($_POST['doc_date'], 6, 4) . "/" . substr($_POST['doc_date'], 3, 2) . "/" . substr($_POST['doc_date'], 0, 2);
 
@@ -25,19 +24,16 @@ fwrite($myfile, $doc_date_start . " | " . $doc_date_to);
 fclose($myfile);
 */
 
-/*
-$month = $_POST['month'];
-$year = $_POST['year'];
 
-$sql_curr_month = " SELECT * FROM ims_month where month = '" . $month . "'";
+$sql_customer_name = " SELECT AR_NAME FROM ims_customer_arcode where AR_CODE = '" . $AR_CODE . "'";
 
-$stmt_curr_month = $conn->prepare($sql_curr_month);
-$stmt_curr_month->execute();
-$MonthCurr = $stmt_curr_month->fetchAll();
-foreach ($MonthCurr as $row_curr) {
-    $month_name = $row_curr["month_name"];
+$stmt_customer_name = $conn_sac->prepare($sql_customer_name);
+$stmt_customer_name->execute();
+$row_customer = $stmt_customer_name->fetchAll();
+foreach ($row_customer as $row_customers) {
+    $customer_name = $row_customers["AR_NAME"];
 }
-*/
+
 
 ?>
 <!DOCTYPE html>
@@ -107,11 +103,11 @@ foreach ($MonthCurr as $row_curr) {
             <tbody>
 
             <?php
-            $tires_brand = array("LE", "LL");
+            $tires_brand = array("AT","LE","LL","LLIT");
 
             foreach ($tires_brand as $tr_brand) {
 
-                $tires_size = array("R13", "R14", "R15", "R16", "R17", "R18", "R19", "R20", "R21", "R22");
+                $tires_size = array("R13","R14","R15","R16","R17","R18","R19","R20","R21","R22");
 
                 foreach ($tires_size as $tr_size) {
 
@@ -124,6 +120,7 @@ foreach ($MonthCurr as $row_curr) {
                            ORDER BY BRN_CODE,CAST(DI_YEAR AS UNSIGNED) DESC , CAST(DI_MONTH AS UNSIGNED) DESC    ";
 
 /*
+                    $sql_tires_chk .= $sql_tires . "\n\r";
                     $myfile = fopen("search-qry-tires.txt", "w") or die("Unable to open file!");
                     fwrite($myfile, $sql_tires);
                     fclose($myfile);
