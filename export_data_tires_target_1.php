@@ -116,6 +116,7 @@ if (strlen($_SESSION['alogin']) == "") {
                                                                                 <br>
                                                                             <?php } ?>
                                                                             <br>
+
                                                                             <!--div class="row">
                                                                                 <div class="col-sm-12">
                                                                                     <button type="button" id="BtnSale"
@@ -128,13 +129,23 @@ if (strlen($_SESSION['alogin']) == "") {
 
                                                                             <div class="row">
                                                                                 <div class="col-sm-12">
-                                                                                    <button type="submit"
+                                                                                    <button type="button"
                                                                                             class="btn btn-success"
                                                                                             id="btnExport"> Export <i
                                                                                                 class="fa fa-check"></i>
                                                                                     </button>
                                                                                 </div>
                                                                             </div>
+
+                                                                            <!--div class="row">
+                                                                                <div class="col-sm-12">
+                                                                                    <button type="submit"
+                                                                                            class="btn btn-success"
+                                                                                            id="btnExport"> Export <i
+                                                                                                class="fa fa-check"></i>
+                                                                                    </button>
+                                                                                </div>
+                                                                            </div-->
 
                                                                         </div>
                                                                     </div>
@@ -250,16 +261,19 @@ if (strlen($_SESSION['alogin']) == "") {
         });
     </script>
 
-    <!--script>
+    <script>
 
-        $("#BtnSale").click(function () {
-            document.forms['myform'].action = 'export_process/export_data_tires_target.php';
+        $("#btnExport").click(function () {
+            alert("OK");
+            /*
+            document.forms['myform'].action = 'export_process/export_data_tires_target_1.php';
             document.forms['myform'].target = '_blank';
             document.forms['myform'].submit();
+            */
             return true;
         });
 
-    </script-->
+    </script>
 
     <script>
         $(document).ready(function () {
