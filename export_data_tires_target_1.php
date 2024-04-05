@@ -117,27 +117,7 @@ if (strlen($_SESSION['alogin']) == "") {
                                                                             <?php } ?>
                                                                             <br>
 
-                                                                            <!--div class="row">
-                                                                                <div class="col-sm-12">
-                                                                                    <button type="button" id="BtnSale"
-                                                                                            name="BtnSale"
-                                                                                            class="btn btn-primary mb-3">
-                                                                                        แสดงยอด
-                                                                                    </button>
-                                                                                </div>
-                                                                            </div-->
-
                                                                             <div class="row">
-                                                                                <div class="col-sm-12">
-                                                                                    <button type="button"
-                                                                                            class="btn btn-success"
-                                                                                            id="btnExport"> Export <i
-                                                                                                class="fa fa-check"></i>
-                                                                                    </button>
-                                                                                </div>
-                                                                            </div>
-
-                                                                            <!--div class="row">
                                                                                 <div class="col-sm-12">
                                                                                     <button type="submit"
                                                                                             class="btn btn-success"
@@ -145,7 +125,7 @@ if (strlen($_SESSION['alogin']) == "") {
                                                                                                 class="fa fa-check"></i>
                                                                                     </button>
                                                                                 </div>
-                                                                            </div-->
+                                                                            </div>
 
                                                                         </div>
                                                                     </div>
@@ -263,13 +243,12 @@ if (strlen($_SESSION['alogin']) == "") {
 
     <script>
 
-        $("#btnExport").click(function () {
+        $("#btnExport1").click(function () {
             alert("OK");
-            /*
             document.forms['myform'].action = 'export_process/export_data_tires_target_1.php';
             document.forms['myform'].target = '_blank';
             document.forms['myform'].submit();
-            */
+
             return true;
         });
 

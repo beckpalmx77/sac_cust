@@ -6,11 +6,10 @@ date_default_timezone_set('Asia/Bangkok');
 $where_date = "";
 $AR_CODE = $_POST["AR_CODE"];
 
-/*
-$my_file = fopen("Sale_D-CUST0.txt", "w") or die("Unable to open file!");
+
+$my_file = fopen("Sale_D-CUST.txt", "w") or die("Unable to open file!");
 fwrite($my_file, $AR_CODE);
 fclose($my_file);
-*/
 
 //$year = $_POST["year"];
 
@@ -30,11 +29,10 @@ foreach ($row_customer as $row_customers) {
     $customer_name = $row_customers["AR_NAME"];
 }
 
-/*
-$my_file = fopen("Sale_D-CUST1.txt", "w") or die("Unable to open file!");
-fwrite($my_file, " myCheck  = " . $doc_date_start);
+
+$my_file = fopen("Sale_D-CUST.txt", "w") or die("Unable to open file!");
+fwrite($my_file, $branch . "-" .$month . "-" .$year . " myCheck  = " . $doc_date_start);
 fclose($my_file);
-*/
 
 
 $filename = "Customer-" . $AR_CODE . "-" . date('m/d/Y H:i:s', time()) . ".csv";
