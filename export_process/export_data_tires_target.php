@@ -30,7 +30,7 @@ foreach ($row_customer as $row_customers) {
 //fclose($my_file);
 
 
-$filename = "Customer-" . $AR_CODE . "-" . date('m/d/Y H:i:s', time()) . ".csv";
+$filename = "Exp1-Customer-" . $AR_CODE . "-" . date('m/d/Y H:i:s', time()) . ".csv";
 
 @header('Content-type: text/csv; charset=UTF-8');
 @header('Content-Encoding: UTF-8');
