@@ -65,23 +65,32 @@ $totalRecordwithFilter = $records['allcount'];
 
 ## Fetch records
 
+
 if ($columnName=='DI_DATE') {
-    $columnName = " DI_YEAR desc , DI_MONTH desc , SUBSTR(DI_DATE,1,2) desc ";
+    $columnName = " CAST(DI_YEAR AS UNSIGNED) DESC , CAST(DI_MONTH AS UNSIGNED) DESC , CAST(SUBSTR(DI_DATE,1,2) AS UNSIGNED) DESC ";
     $columnSortOrder = " ";
 }
 
+
 $order_by = " order by ".$columnName." ".$columnSortOrder;
 
-$empQuery = "select * from ims_product_sale_sac WHERE 1 ".$searchQuery. $order_by ." limit ".$row.",".$rowperpage;
+    if ($columnSortOrder!=="") {
+        $columnName .= " ,BRN_CODE,CAST(DI_YEAR AS UNSIGNED) DESC , CAST(DI_MONTH AS UNSIGNED) DESC , CAST(SUBSTR(DI_DATE,1,2) AS UNSIGNED) DESC";
+    } else {
+        $columnName .= " BRN_CODE,CAST(DI_YEAR AS UNSIGNED) DESC , CAST(DI_MONTH AS UNSIGNED) DESC , CAST(SUBSTR(DI_DATE,1,2) AS UNSIGNED) DESC";
+    }
 
-$empRecords = mysqli_query($con, $empQuery);
+$TiresQuery = "select * from ims_product_sale_sac WHERE 1 ".$searchQuery. $order_by ." limit ".$row.",".$rowperpage;
+
+$empRecords = mysqli_query($con, $TiresQuery);
 $data = array();
 
 /*
 $myfile = fopen("search-qry.txt", "w") or die("Unable to open file!");
-fwrite($myfile, $empQuery . " / " . $columnSortOrder);
+fwrite($myfile, $TiresQuery . " / " . $columnSortOrder);
 fclose($myfile);
 */
+
 
 while ($row = mysqli_fetch_assoc($empRecords)) {
     $data[] = array(

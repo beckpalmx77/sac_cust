@@ -53,8 +53,8 @@ if (strlen($_SESSION['alogin']) == "") {
                                                 <thead>
                                                 <tr>
                                                     <th>ยี่ห้อ</th>
-                                                    <th>ขนาด</th>
                                                     <th>รายละเอียด</th>
+                                                    <th>ขนาด</th>
                                                     <th>คะแนนร้านทั่วไป</th>
                                                     <th>คะแนน Shop</th>
                                                     <th>Action</th>
@@ -64,8 +64,8 @@ if (strlen($_SESSION['alogin']) == "") {
                                                 <tfoot>
                                                 <tr>
                                                     <th>ยี่ห้อ</th>
-                                                    <th>ขนาด</th>
                                                     <th>รายละเอียด</th>
+                                                    <th>ขนาด</th>
                                                     <th>คะแนนร้านทั่วไป</th>
                                                     <th>คะแนน Shop</th>
                                                     <th>Action</th>

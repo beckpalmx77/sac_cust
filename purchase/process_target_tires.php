@@ -54,7 +54,7 @@ $sql_qry = " SELECT BRN_CODE," . $size . " AS TIRES_SIZE,DI_MONTH_NAME,DI_YEAR A
 WHERE AR_CODE = '" . $customer_id . "' AND SKU_NAME LIKE '%" . $searchByName3 . "%' " . "
 GROUP BY BRN_CODE,DI_MONTH,DI_YEAR 
 HAVING SUM(TRD_QTY)>0
-ORDER BY BRN_CODE,DI_YEAR DESC ,DI_MONTH DESC ";
+ORDER BY BRN_CODE,CAST(DI_YEAR AS UNSIGNED) DESC , CAST(DI_MONTH AS UNSIGNED) DESC , CAST(SUBSTR(DI_DATE,1,2) AS UNSIGNED) DESC ";
 
 /*
 $myfile = fopen("search-qry-cond.txt", "w") or die("Unable to open file!");
