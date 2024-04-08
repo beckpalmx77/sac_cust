@@ -44,7 +44,7 @@ $filename = "Customer-" . $AR_CODE . "-" . date('m/d/Y H:i:s', time()) . ".csv";
 
 $data = $AR_CODE . " - " . $customer_name . " วันที่ " . $_POST['doc_date_start'] . " ถึง " . $_POST['doc_date_to'] . "\n";
 $data .= "\n";
-$data .= "ยี่ห้อ,เดือน,ขนาดยาง,จำนวน (เส้น),คะแนน (ต่อเส้น),คะแนน (รวม)\n";
+$data .= "ยี่ห้อ,ปี,เดือน,ขนาดยาง,จำนวน (เส้น),คะแนน (ต่อเส้น),คะแนน (รวม)\n";
 
 $tires_brand = array("AT", "LE", "LL", "LLIT");
 
@@ -91,6 +91,7 @@ foreach ($tires_brand as $tr_brand) {
             $total_qty = $total_qty + $row_tires['TRD_QTY'];
 
             $data .= " " . $row_tires['BRN_CODE'] . ",";
+            $data .= " " . $row_tires['DI_YEAR'] . ",";
             $data .= " " . $row_tires['DI_MONTH_NAME'] . ",";
             $data .= " " . $row_tires['TIRES_SIZE'] . ",";
             $data .= " " . number_format($row_tires['TRD_QTY'], 2) . ",";
@@ -100,7 +101,7 @@ foreach ($tires_brand as $tr_brand) {
     }
 }
 
-$data .= ",,," . $total_qty . ",," . $sum_point . "\n";
+$data .= ",,,," . $total_qty . ",," . $sum_point . "\n";
 
 // $data = iconv("utf-8", "tis-620", $data);
 $data = iconv("utf-8", "windows-874//IGNORE", $data);
