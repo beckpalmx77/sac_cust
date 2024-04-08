@@ -132,7 +132,7 @@ foreach ($row_customer as $row_customers) {
 
                     $sql_tires = " SELECT BRN_CODE, '" . $tr_size . "' AS TIRES_SIZE,DI_MONTH_NAME,DI_YEAR As DI_YEAR,SUM(TRD_QTY) as TRD_QTY 
                            FROM ims_product_sale_sac 
-                           WHERE AR_CODE = '" . $AR_CODE . "' AND BRN_CODE = '" . $tr_brand . "'" . $where_tires_size
+                           WHERE SKU_CODE NOT LIKE 'CL%' AND AR_CODE = '" . $AR_CODE . "' AND BRN_CODE = '" . $tr_brand . "'" . $where_tires_size
                         . $where_date . "
                            GROUP BY BRN_CODE,DI_MONTH,DI_YEAR 
                            HAVING SUM(TRD_QTY)>0
