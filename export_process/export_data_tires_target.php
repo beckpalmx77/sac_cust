@@ -10,6 +10,8 @@ $point = 0;
 $total_point = 0;
 $sum_point = 0;
 $total_qty = 0;
+$total_price = 0;
+
 //$year = $_POST["year"];
 
 $doc_date_start = substr($_POST['doc_date_start'], 6, 4) . "-" . substr($_POST['doc_date_start'], 3, 2) . "-" . substr($_POST['doc_date_start'], 0, 2);
@@ -66,7 +68,7 @@ foreach ($tires_brand as $tr_brand) {
             . $where_date . "
                            GROUP BY BRN_CODE,DI_MONTH,DI_YEAR 
                            HAVING SUM(TRD_QTY)>0
-                           ORDER BY BRN_CODE,CAST(DI_YEAR AS UNSIGNED) DESC , CAST(DI_MONTH AS UNSIGNED) ";
+                           ORDER BY BRN_CODE,CAST(DI_YEAR AS UNSIGNED) ASC , CAST(DI_MONTH AS UNSIGNED) ASC ";
 
         $statement_tires = $conn_sac->query($sql_tires);
         $results_tires = $statement_tires->fetchAll(PDO::FETCH_ASSOC);

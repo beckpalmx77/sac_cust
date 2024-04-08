@@ -9,6 +9,8 @@ $year = "";
 $point = 0;
 $total_point = 0;
 $sum_point = 0;
+$total_qty = 0;
+$total_price = 0;
 
 // $year = $_POST['year'];
 $AR_CODE = $_POST['AR_CODE'];
@@ -91,6 +93,7 @@ foreach ($row_customer as $row_customers) {
             <thead>
             <tr>
                 <th>ยี่ห้อ</th>
+                <th>ปี</th>
                 <th>เดือน</th>
                 <th>ขนาดยาง</th>
                 <th>จำนวน (เส้น)</th>
@@ -101,6 +104,7 @@ foreach ($row_customer as $row_customers) {
             <tfoot>
             <tr>
                 <th>ยี่ห้อ</th>
+                <th>ปี</th>
                 <th>เดือน</th>
                 <th>ขนาดยาง</th>
                 <th>จำนวน (เส้น)</th>
@@ -136,7 +140,7 @@ foreach ($row_customer as $row_customers) {
                         . $where_date . "
                            GROUP BY BRN_CODE,DI_MONTH,DI_YEAR 
                            HAVING SUM(TRD_QTY)>0
-                           ORDER BY BRN_CODE,CAST(DI_YEAR AS UNSIGNED) DESC , CAST(DI_MONTH AS UNSIGNED) ASC    ";
+                           ORDER BY BRN_CODE,CAST(DI_YEAR AS UNSIGNED) ASC , CAST(DI_MONTH AS UNSIGNED) ASC    ";
 
                     /*
                                         $sql_tires_chk .= $sql_tires . "\n\r";
@@ -164,10 +168,13 @@ foreach ($row_customer as $row_customers) {
                             $sum_point = ($sum_point + $total_point);
                         }
 
+                        $total_qty = $total_qty + $row_tires['TRD_QTY'];
+
                         ?>
 
                         <tr>
                         <td><?php echo htmlentities($row_tires['BRN_CODE']); ?></td>
+                        <td><?php echo htmlentities($row_tires['DI_YEAR']); ?></td>
                         <td><?php echo htmlentities($row_tires['DI_MONTH_NAME']); ?></td>
                         <td><?php echo htmlentities($row_tires['TIRES_SIZE']); ?></td>
                         <td><?php echo htmlentities(number_format($row_tires['TRD_QTY'], 2)); ?></td>
@@ -183,8 +190,8 @@ foreach ($row_customer as $row_customers) {
                 <th></th>
                 <th></th>
                 <th></th>
+                <th><th><?php echo $total_qty ?></th></th>
                 <th></th>
-                <th>รวมคะแนน</th>
                 <th><?php echo $sum_point ?></th>
             </tr>
 

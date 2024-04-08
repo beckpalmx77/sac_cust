@@ -73,7 +73,7 @@ foreach ($tires_brand as $tr_brand) {
                        FROM ims_product_sale_sac  
                        WHERE AR_CODE = '" . $AR_CODE . "' AND BRN_CODE = '" . $tr_brand . "'" . $where_tires_size . " AND TRD_QTY > 0"
             . $where_date
-            . " ORDER BY BRN_CODE,CAST(DI_YEAR AS UNSIGNED) DESC , CAST(DI_MONTH AS UNSIGNED) ";
+            . " ORDER BY BRN_CODE,CAST(DI_YEAR AS UNSIGNED) ASC , CAST(DI_MONTH AS UNSIGNED) ASC ";
 
 /*
         $my_file = fopen("sql_tires.txt", "w") or die("Unable to open file!");
