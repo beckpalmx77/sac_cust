@@ -66,7 +66,7 @@ foreach ($tires_brand as $tr_brand) {
             . $where_date . "
                            GROUP BY BRN_CODE,DI_MONTH,DI_YEAR 
                            HAVING SUM(TRD_QTY)>0
-                           ORDER BY BRN_CODE,CAST(DI_YEAR AS UNSIGNED) DESC , CAST(DI_MONTH AS UNSIGNED) DESC    ";
+                           ORDER BY BRN_CODE,CAST(DI_YEAR AS UNSIGNED) DESC , CAST(DI_MONTH AS UNSIGNED) ";
 
         $statement_tires = $conn_sac->query($sql_tires);
         $results_tires = $statement_tires->fetchAll(PDO::FETCH_ASSOC);
