@@ -51,7 +51,7 @@ $filename = "Exp2-Customer-" . $AR_CODE . "-" . date('m/d/Y H:i:s', time()) . ".
 
 $data = $AR_CODE . " - " . $customer_name . " วันที่ " . $_POST['doc_date_start'] . " ถึง " . $_POST['doc_date_to'] . "\n";
 $data .= "\n";
-$data .= "เลขที่เอกสาร,วันที่,เดือน,ปี,ยี่ห้อ,รหัสสินค้า,รายละเอียด,ขนาดยาง,จำนวน,คะแนน (ต่อเส้น),คะแนน (รวม),ราคาต่อหน่วย,ราคารวม\n";
+$data .= "รหัสลูกค้า,ชื่อลูกค้า,เลขที่เอกสาร,วันที่,เดือน,ปี,ยี่ห้อ,รหัสสินค้า,รายละเอียด,ขนาดยาง,จำนวน,คะแนน (ต่อเส้น),คะแนน (รวม),ราคาต่อหน่วย,ราคารวม\n";
 
 $tires_brand = array("AT", "LE", "LL", "LLIT");
 
@@ -69,7 +69,7 @@ foreach ($tires_brand as $tr_brand) {
             $where_tires_size = " AND SKU_NAME LIKE '%" . $tr_size . "%'" ;
         }
 
-        $sql_tires = " SELECT DI_REF,DI_DATE,DI_MONTH_NAME,DI_YEAR,BRN_CODE,SKU_CODE,SKU_NAME,'" . $tr_size . "' AS TIRES_SIZE,TRD_QTY,TRD_U_PRC,TRD_G_KEYIN
+        $sql_tires = " SELECT AR_CODE,AR_NAME,DI_REF,DI_DATE,DI_MONTH_NAME,DI_YEAR,BRN_CODE,SKU_CODE,SKU_NAME,'" . $tr_size . "' AS TIRES_SIZE,TRD_QTY,TRD_U_PRC,TRD_G_KEYIN
                        FROM ims_product_sale_sac  
                        WHERE AR_CODE = '" . $AR_CODE . "' AND BRN_CODE = '" . $tr_brand . "'" . $where_tires_size . " AND TRD_QTY > 0"
             . $where_date
@@ -101,6 +101,8 @@ foreach ($tires_brand as $tr_brand) {
             $total_qty = $total_qty + $row_tires['TRD_QTY'];
             $total_price = $total_price + $row_tires['TRD_G_KEYIN'];
 
+            $data .= $row_tires['AR_CODE'] . ",";
+            $data .= $row_tires['AR_NAME'] . ",";
             $data .= $row_tires['DI_REF'] . ",";
             $data .= $row_tires['DI_DATE'] . ",";
             $data .= $row_tires['DI_MONTH_NAME'] . ",";
@@ -118,7 +120,7 @@ foreach ($tires_brand as $tr_brand) {
     }
 }
 
-            $data .= ",,,,,,,," . $total_qty . ",," . $sum_point . ",," . $total_price . "\n";
+            $data .= ",,,,,,,,,," . $total_qty . ",," . $sum_point . ",," . $total_price . "\n";
 
 // $data = iconv("utf-8", "tis-620", $data);
 $data = iconv("utf-8", "windows-874//IGNORE", $data);
