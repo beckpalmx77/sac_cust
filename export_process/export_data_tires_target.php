@@ -9,7 +9,7 @@ $AR_CODE = $_POST["AR_CODE"];
 $point = 0;
 $total_point = 0;
 $sum_point = 0;
-
+$total_qty = 0;
 //$year = $_POST["year"];
 
 $doc_date_start = substr($_POST['doc_date_start'], 6, 4) . "-" . substr($_POST['doc_date_start'], 3, 2) . "-" . substr($_POST['doc_date_start'], 0, 2);
@@ -51,13 +51,13 @@ foreach ($tires_brand as $tr_brand) {
     foreach ($tires_size as $tr_size) {
 
         if ($tr_size === "R17") {
-            $where_tires_size = " AND SKU_NAME LIKE '%R17%' AND SKU_NAME NOT LIKE  '%R17.5%' " ;
+            $where_tires_size = " AND SKU_NAME LIKE '%R17%' AND SKU_NAME NOT LIKE  '%R17.5%' ";
         } else if ($tr_size === "R19") {
-            $where_tires_size = " AND SKU_NAME LIKE '%R19%' AND SKU_NAME NOT LIKE  '%R19.5%' " ;
+            $where_tires_size = " AND SKU_NAME LIKE '%R19%' AND SKU_NAME NOT LIKE  '%R19.5%' ";
         } else if ($tr_size === "R22") {
-            $where_tires_size = " AND SKU_NAME LIKE '%R22%' AND SKU_NAME NOT LIKE  '%R22.5%' " ;
+            $where_tires_size = " AND SKU_NAME LIKE '%R22%' AND SKU_NAME NOT LIKE  '%R22.5%' ";
         } else {
-            $where_tires_size = " AND SKU_NAME LIKE '%" . $tr_size . "%'" ;
+            $where_tires_size = " AND SKU_NAME LIKE '%" . $tr_size . "%'";
         }
 
         $sql_tires = " SELECT BRN_CODE, '" . $tr_size . "' AS TIRES_SIZE,DI_MONTH_NAME,DI_YEAR As DI_YEAR,SUM(TRD_QTY) as TRD_QTY 
@@ -86,6 +86,8 @@ foreach ($tires_brand as $tr_brand) {
                 $sum_point = ($sum_point + $total_point);
             }
 
+            $total_qty = $total_qty + $row_tires['TRD_QTY'];
+
             $data .= " " . $row_tires['BRN_CODE'] . ",";
             $data .= " " . $row_tires['DI_MONTH_NAME'] . ",";
             $data .= " " . $row_tires['TIRES_SIZE'] . ",";
@@ -96,7 +98,7 @@ foreach ($tires_brand as $tr_brand) {
     }
 }
 
-         $data .= ",,,,คะแนนรวม," . $sum_point . "\n";
+$data .= ",,," . $total_qty . ",," . $sum_point . "\n";
 
 // $data = iconv("utf-8", "tis-620", $data);
 $data = iconv("utf-8", "windows-874//IGNORE", $data);
