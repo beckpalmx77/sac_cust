@@ -596,8 +596,9 @@ a:focus {
   color: #858796
 }
 
+
 .bg-navbar {
-  background-color: #1c7aba
+  background-color: #059995
 }
 
 .sidebar {
@@ -1092,7 +1093,7 @@ a:focus {
 
 .sidebar-light .sidebar-brand {
   color: #fafafa;
-  background-color: #397dc6
+  background-color: #3bc4b0
 }
 
 .sidebar-light hr.sidebar-divider {
