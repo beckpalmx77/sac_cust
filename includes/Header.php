@@ -13,11 +13,11 @@
 
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="css/myadmin.css" rel="stylesheet">
+    <link href="css/myadmin.css?v=9999" rel="stylesheet">
 
     <link rel="stylesheet" href="vendor/alertify/css/alertify.core.css"/>
     <link rel="stylesheet" href="vendor/alertify/css/alertify.default.css"/>
-    <link rel="stylesheet" href="vendor/alertify/css/main.css"/>
+    <link rel="stylesheet" href="vendor/alertify/css/main.css?v=9999"/>
 
     <!--script src="vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script-->
