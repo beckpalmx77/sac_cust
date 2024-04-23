@@ -15,7 +15,7 @@ echo $date2->format(DateTime::RFC1123) . "\n";
 $date_create = $date2->format('Y-m-d-H-i-s');
 $data_create = "Q_MSG Create = " . $date_create ;
 
-echo "Before Loop = " . $data_create ;
+echo "\n\r" . "Before Loop = " . $data_create ;
 
 $connection = new AMQPStreamConnection($rabbitmqHost, $rabbitmqPort, $rabbitmqUser, $rabbitmqPass);
 $channel = $connection->channel();
