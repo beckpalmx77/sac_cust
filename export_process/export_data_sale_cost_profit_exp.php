@@ -4,6 +4,7 @@ include('../config/connect_db_sac.php');
 date_default_timezone_set('Asia/Bangkok');
 
 $where_date = "";
+$where_ar_code = "";
 $AR_CODE = $_POST["AR_CODE"];
 
 $doc_date_start = substr($_POST['doc_date_start'], 6, 4) . "-" . substr($_POST['doc_date_start'], 3, 2) . "-" . substr($_POST['doc_date_start'], 0, 2);
@@ -29,10 +30,11 @@ if ($AR_CODE=="-") {
 
 $String_Sql = " SELECT * FROM ims_product_price_cost WHERE 1 " . $where_date  . $where_ar_code;
 
-//$my_file = fopen("Sale_D-CP.txt", "w") or die("Unable to open file!");
-//fwrite($my_file, $branch . "-" .$month . "-" .$year . " myCheck  = " . $myCheck);
-//fclose($my_file);
-
+/*
+$my_file = fopen("sql_str_file.txt", "w") or die("Unable to open file!");
+fwrite($my_file, $AR_CODE . " sql  = " . $String_Sql);
+fclose($my_file);
+*/
 
 $filename = "Customer-" . $AR_CODE . "-" . date('m/d/Y H:i:s', time()) . ".csv";
 
@@ -41,26 +43,52 @@ $filename = "Customer-" . $AR_CODE . "-" . date('m/d/Y H:i:s', time()) . ".csv";
 @header("Content-Disposition: attachment; filename=" . $filename);
 
 $data = $AR_CODE . " - " . $customer_name . " วันที่ " . $_POST['doc_date_start'] . " ถึง " . $_POST['doc_date_to'] . "\n";
-$data .= "\n";
-$data .= "ยี่ห้อ,ปี,เดือน,ขนาดยาง,จำนวน (เส้น),คะแนน (ต่อเส้น),คะแนน (รวม)\n";
+$data .= "รหัสลูกค้า,ชื่อลูกค้า,วันที่,เลขที่เอกสาร,รหัสสินค้า,ขนาดยาง/ดอกยาง,จำนวนเส้น,แถม,ราคาขายต่อเส้น,ส่วนลดบัตรโลตัส,มูลค่าบัตรโลตัส,ราคาขายต่อเส้นหลังหักส่วนลด,ทุนเฉลี่ย,ค่าขนส่ง,ราคาทุนเฉลี่ย,ราคาทุนเฉลี่ยรวมขนส่ง,ยอดขายรวม,กำไรต่อเส้น(บิลขาย-ทุนเฉลี่ย,ผลตอบแทนรวม,ค่าขนส่งรวม,%กำไรต่อเส้น(บิลขาย-ราคาขาย),ราคาตามใบขาย(เครดิต/เงินสด),ส่วนต่างบิลขาย-ใบราคา,หมายเหตุ(2),%ส่วนต่าง(บิลขาย-ใบราคา),ยี่ห้อ,ประเภท,เครดิต\n";
 
-$query = $conn->prepare($String_Sql);
+/*
+$my_file = fopen("sql_str_file.txt", "w") or die("Unable to open file!");
+fwrite($my_file, $data . " sql  = " . $String_Sql);
+fclose($my_file);
+*/
+
+
+$query = $conn_sac->prepare($String_Sql);
 $query->execute();
 $results = $query->fetchAll(PDO::FETCH_OBJ);
 
-if ($query->rowCount() >= 1) {
+//if ($query->rowCount() >= 1) {
     foreach ($results as $result) {
 
-        $data .= " " . $result['BRN_CODE'] . ",";
-        $data .= " " . $result['DI_YEAR'] . ",";
-        $data .= " " . $result['DI_MONTH_NAME'] . ",";
-        $data .= " " . $result['TIRES_SIZE'] . ",";
-        $data .= " " . $result['TIRES_SIZE'] . ",";
-        $data .= " " . $result['TIRES_SIZE'] . ",";
-        $data .= " " . $result['TIRES_SIZE'] . ",";
-        $data .= " " . $total_point . "\n";
+        $data .= $result->AR_CODE . ",";
+        $data .= str_replace(",", "", $result->AR_NAME) . ",";
+        $data .= $result->DI_DATE . ",";
+        $data .= $result->DI_REF . ",";
+        $data .= str_replace(",", "", $result->SKU_CODE) . ",";
+        $data .= str_replace(",", "", $result->SKU_NAME) . ",";
+        $data .= str_replace(",", "", $result->TRD_QTY) . ",";
+        $data .= str_replace(",", "", $result->TRD_Q_FREE) . ",";
+        $data .= str_replace(",", "", $result->TRD_U_PRC) . ",";
+        $data .= str_replace(",", "", $result->DISCOUNT1) . ",";
+        $data .= str_replace(",", "", $result->DISCOUNT2) . ",";
+        $data .= str_replace(",", "", $result->TRD_DSC_KEYINV) . ",";
+        $data .= str_replace(",", "", $result->AVG_COST) . ",";
+        $data .= str_replace(",", "", $result->LOGISTIC) . ",";
+        $data .= str_replace(",", "", $result->AVG_COST_PRICE) . ",";
+        $data .= str_replace(",", "", $result->AVG_COST_PRICE_LOGISTIC) . ",";
+        $data .= str_replace(",", "", $result->TOTAL_PRICE) . ",";
+        $data .= str_replace(",", "", $result->PROFIT_U_PRICE) . ",";
+        $data .= str_replace(",", "", $result->GROSS_PROFIT) . ",";
+        $data .= str_replace(",", "", $result->TOTAL_LOGISTIC) . ",";
+        $data .= str_replace(",", "", $result->PROFIT_U_PERCENT) . ",";
+        $data .= str_replace(",", "", $result->PRICE_BY_CRDR) . ",";
+        $data .= str_replace(",", "", $result->DIFF_PRICE_SALE) . ",";
+        $data .= str_replace(",", "", $result->REMARK2) . ",";
+        $data .= str_replace(",", "", $result->DIFF_PRICE_SALE_PERCENT) . ",";
+        $data .= str_replace(",", "", $result->BRAND) . ",";
+        $data .= str_replace(",", "", $result->PRODUCT_TYPE) . ",";
+        $data .= str_replace(",", "", $result->CREDIT) . "\n";
 
-    }
+    //}
 
 }
 
