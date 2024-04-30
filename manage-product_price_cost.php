@@ -42,34 +42,35 @@ if (strlen($_SESSION['alogin']) == "") {
                                             <table id='TableRecordList' class='display dataTable'>
                                                 <thead>
                                                 <tr>
-                                                    <th>AR_CODE</th>
-                                                    <th>AR_NAME</th>
-                                                    <th>DI_DATE</th>
-                                                    <th>DI_REF</th>
-                                                    <th>SKU_CODE</th>
-                                                    <th>SKU_NAME</th>
-                                                    <th>TRD_QTY</th>
-                                                    <th>TRD_Q_FREE</th>
-                                                    <th>TRD_U_PRC</th>
-                                                    <th>DISCOUNT1</th>
-                                                    <th>DISCOUNT2</th>
-                                                    <th>TRD_DSC_KEYINV</th>
-                                                    <th>AVG_COST</th>
-                                                    <th>LOGISTIC</th>
-                                                    <th>VG_COST_PRICE</th>
-                                                    <th>AVG_COST_PRICE_LOGISTIC</th>
-                                                    <th>TOTAL_PRICE</th>
-                                                    <th>PROFIT_U_PRICE</th>
-                                                    <th>GROSS_PROFIT</th>
-                                                    <th>TOTAL_LOGISTIC</th>
-                                                    <th>PROFIT_U_PERCENT</th>
-                                                    <th>PRICE_BY_CRDR</th>
-                                                    <th>DIFF_PRICE_SALE</th>
-                                                    <th>REMARK2</th>
-                                                    <th>DIFF_PRICE_SALE_PERCENT</th>
-                                                    <th>BRAND</th>
-                                                    <th>PRODUCT_TYPE</th>
-                                                    <th>CREDIT</th>
+                                                    <th>รหัสลูกค้า</th>
+                                                    <th>ชื่อลูกค้า</th>
+                                                    <th>วันที่</th>
+                                                    <th>เลขที่เอกสาร</th>
+                                                    <th>รหัสสินค้า</th>
+                                                    <th>ขนาดยาง/ดอกยาง</th>
+                                                    <th>จำนวนเส้น</th>
+                                                    <th>แถม</th>
+                                                    <th>ราคาขายต่อเส้น</th>
+                                                    <th>ส่วนลดบัตรโลตัส</th>
+                                                    <th>มูลค่าบัตรโลตัส</th>
+                                                    <th>ราคาขายต่อเส้นหลังหักส่วนลด</th>
+                                                    <th>ทุนเฉลี่ย</th>
+                                                    <th>ค่าขนส่ง</th>
+                                                    <th>ราคาทุนเฉลี่ย</th>
+                                                    <th>ราคาทุนเฉลี่ยรวมขนส่ง</th>
+                                                    <th>ยอดขายรวม</th>
+                                                    <th>กำไรต่อเส้น(บิลขาย-ทุนเฉลี่ย</th>
+                                                    <th>ผลตอบแทนรวม</th>
+                                                    <th>ค่าขนส่งรวม</th>
+                                                    <th>%กำไรต่อเส้น(บิลขาย-ราคาขาย)</th>
+                                                    <th>ราคาตามใบขาย(เครดิต/เงินสด)</th>
+                                                    <th>ส่วนต่างบิลขาย-ใบราคา</th>
+                                                    <th>หมายเหตุ(2)</th>
+                                                    <th>%ส่วนต่าง(บิลขาย-ใบราคา)</th>
+                                                    <th>ยี่ห้อ</th>
+                                                    <th>ประเภท</th>
+                                                    <th>เครดิต</th>
+
 
                                                 </tr>
                                                 </thead>
@@ -205,6 +206,7 @@ if (strlen($_SESSION['alogin']) == "") {
                 'autoWidth': true,
                 <?php  if ($_SESSION['deviceType']!=='computer') {
                     echo "'scrollX': true,";
+                    echo "'scrollY': 480,";
                 }?>
                 'ajax': {
                     'url': 'model/manage_price_cost_process.php',
