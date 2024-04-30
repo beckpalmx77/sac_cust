@@ -70,8 +70,6 @@ if (strlen($_SESSION['alogin']) == "") {
                                                     <th>ยี่ห้อ</th>
                                                     <th>ประเภท</th>
                                                     <th>เครดิต</th>
-
-
                                                 </tr>
                                                 </thead>
                                                 <tfoot>
@@ -104,7 +102,6 @@ if (strlen($_SESSION['alogin']) == "") {
                                                     <th>BRAND</th>
                                                     <th>PRODUCT_TYPE</th>
                                                     <th>CREDIT</th>
-
                                                 </tr>
                                                 </tfoot>
                                             </table>
