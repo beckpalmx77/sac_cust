@@ -28,7 +28,12 @@ if(!empty($_GET['status'])){
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Import Excel File Data with PHP</title>
+    <title>นำข้อมูลเข้าระบบด้วย Excel สงวนออโต้คาร์ | SANGUAN AUTO CAR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link href="img/logo/logo.png" rel="icon">
 
     <!-- Bootstrap library -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
