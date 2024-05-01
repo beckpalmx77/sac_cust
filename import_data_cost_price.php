@@ -98,8 +98,6 @@ if (!empty($_GET['status'])) {
                         </form>
                     </div>
 
-                    
-
                     <!-- Data list table -->
                     <table class="table table-striped table-bordered">
                         <thead class="table-dark">

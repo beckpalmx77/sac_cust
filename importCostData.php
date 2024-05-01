@@ -62,7 +62,6 @@ if (isset($_POST['importSubmit'])) {
                     //fwrite($my_file,$null_data);
                     //fclose($my_file);
 
-
                 } else {
                     $int_row++;
                     $AR_CODE = trim($row[0]);
@@ -169,6 +168,7 @@ VALUES ('" . $int_row . "','" . $AR_CODE . "','" . $AR_NAME . "', '" . $DI_DATE 
             }
 
             $qstring = '?status=succ';
+
         } else {
             $qstring = '?status=err';
         }
