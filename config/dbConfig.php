@@ -1,8 +1,8 @@
 <?php
 
 // Database configuration
-//$dbHost     = "192.168.88.7";
-$dbHost     = "localhost";
+$dbHost     = "192.168.88.7";
+//$dbHost     = "localhost";
 $dbPort     = "3307";
 $dbUsername = "myadmin";
 $dbPassword = "myadmin";
