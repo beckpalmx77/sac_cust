@@ -2,7 +2,7 @@
 session_start();
 error_reporting(0);
 
-include('../config/connect_db.php');
+include('../config/connect_db_cust.php');
 include('../config/lang.php');
 include('../util/record_util.php');
 
