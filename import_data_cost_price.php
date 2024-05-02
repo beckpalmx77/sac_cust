@@ -54,6 +54,15 @@ if (!empty($_GET['status'])) {
             }
         }
     </script>
+
+    <script>
+        function OpenExample() {
+            let URL = "uploads/import-cost_excel_example.htm";
+            window.open(URL, '_blank');
+        }
+
+    </script>
+
 </head>
 <body id="page-top">
 <div id="wrapper">
@@ -81,7 +90,7 @@ if (!empty($_GET['status'])) {
                     <!-- Import link -->
                     <div class="col-md-12 head">
                         <div class="float-end">
-                            <a href="javascript:void(0);" class="btn btn-success" onclick="formToggle('importFrm');"><i
+                            <a href="javascript:void(0);" class="btn btn-success" onclick="OpenExample();"><i
                                         class="plus"></i> ตัวอย่างไฟล์ Excel ที่จะนำเข้า</a>
                             <a href="javascript:void(0);" class="btn btn-success" onclick="formToggle('importFrm');"><i
                                         class="plus"></i> Import Excel</a>
