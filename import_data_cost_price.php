@@ -82,6 +82,8 @@ if (!empty($_GET['status'])) {
                     <div class="col-md-12 head">
                         <div class="float-end">
                             <a href="javascript:void(0);" class="btn btn-success" onclick="formToggle('importFrm');"><i
+                                        class="plus"></i> ตัวอย่างไฟล์ Excel ที่จะนำเข้า</a>
+                            <a href="javascript:void(0);" class="btn btn-success" onclick="formToggle('importFrm');"><i
                                         class="plus"></i> Import Excel</a>
                         </div>
                     </div>
