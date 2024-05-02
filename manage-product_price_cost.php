@@ -184,7 +184,7 @@ if (strlen($_SESSION['alogin']) == "") {
         $(document).ready(function () {
             let formData = {action: "GET_COST", sub_action: "GET_MASTER"};
             let dataRecords = $('#TableRecordList').DataTable({
-                'lengthMenu': [[5,10,20,50,100,1000,2000,5000,10000], [5,10,20,50,100,1000,2000,5000,10000]],
+                'lengthMenu': [[5, 10, 20, 50, 100, 1000, 2000, 5000, 10000], [5, 10, 20, 50, 100, 1000, 2000, 5000, 10000]],
                 'language': {
                     search: 'ค้นหา', lengthMenu: 'แสดง _MENU_ รายการ',
                     info: 'หน้าที่ _PAGE_ จาก _PAGES_',
@@ -201,10 +201,12 @@ if (strlen($_SESSION['alogin']) == "") {
                 'serverSide': true,
                 'serverMethod': 'post',
                 'autoWidth': true,
-                <?php  if ($_SESSION['deviceType'] !== 'XXX') {
+                <?php
+                if ($_SESSION['deviceType'] !== 'XXX') {
                     echo "'scrollX': true,";
                     echo "'scrollY': 480,";
-                }?>
+                }
+                ?>
                 'ajax': {
                     'url': 'model/manage_price_cost_process.php',
                     'data': formData
