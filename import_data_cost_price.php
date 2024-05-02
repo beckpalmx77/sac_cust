@@ -122,7 +122,10 @@ if (!empty($_GET['status'])) {
                         <tbody>
                         <?php
                         // Get member rows
-                        $result = $db->query(" SELECT imonth , iyear ,COUNT(AR_CODE) AS Records FROM v_ims_product_price_cost GROUP BY  imonth , iyear ORDER BY iyear desc , imonth desc ; ");
+                        $result = $db->query(" SELECT imonth , iyear ,COUNT(AR_CODE) AS Records 
+                                                     FROM v_ims_product_price_cost 
+                                                     GROUP BY  imonth , iyear 
+                                                     ORDER BY iyear desc , imonth desc ; ");
                         if ($result->num_rows > 0) {
                             $i = 0;
                             while ($row = $result->fetch_assoc()) {
