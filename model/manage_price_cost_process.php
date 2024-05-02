@@ -24,11 +24,14 @@ if ($_POST["action"] === 'GET_COST') {
 ## Search
     $searchQuery = " ";
     if ($searchValue != '') {
-        $searchQuery = " AND (AR_CODE LIKE :AR_CODE or
-        AR_NAME LIKE :AR_NAME ) ";
+        $searchQuery = " AND (AR_CODE LIKE :AR_CODE OR AR_NAME LIKE :AR_NAME 
+                         OR DI_DATE LIKE :DI_DATE OR SKU_CODE LIKE :SKU_CODE OR SKU_NAME LIKE :SKU_NAME) ";
         $searchArray = array(
             'AR_CODE' => "%$searchValue%",
             'AR_NAME' => "%$searchValue%",
+            'DI_DATE' => "%$searchValue%",
+            'SKU_CODE' => "%$searchValue%",
+            'SKU_NAME' => "%$searchValue%",
         );
     }
 
