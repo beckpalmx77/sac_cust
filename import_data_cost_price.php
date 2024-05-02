@@ -137,7 +137,7 @@ if (!empty($_GET['status'])) {
                             <?php }
                         } else { ?>
                             <tr>
-                                <td colspan="7">No member(s) found...</td>
+                                <td colspan="7">ไม่มีรายการข้อมูล ...</td>
                             </tr>
                         <?php } ?>
                         </tbody>
