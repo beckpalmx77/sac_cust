@@ -238,7 +238,6 @@ if (strlen($_SESSION['alogin']) == "") {
                     {data: 'BRAND'},
                     {data: 'PRODUCT_TYPE'},
                     {data: 'CREDIT'}
-
                 ]
             });
 
