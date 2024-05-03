@@ -23,8 +23,7 @@ if (strlen($_SESSION['alogin']) == "") {
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800"><?php echo urldecode($_GET['s']) ?></h1>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="<?php echo $_SESSION['dashboard_page'] ?>">Home</a>
-                            </li>
+                            <li class="breadcrumb-item"><a href="<?php echo $_SESSION['dashboard_page']?>">Home</a></li>
                             <li class="breadcrumb-item"><?php echo urldecode($_GET['m']) ?></li>
                             <li class="breadcrumb-item active"
                                 aria-current="page"><?php echo urldecode($_GET['s']) ?></li>
@@ -112,6 +111,7 @@ if (strlen($_SESSION['alogin']) == "") {
                                         </div>
 
 
+
                                     </section>
                                 </div>
                             </div>
@@ -184,7 +184,7 @@ if (strlen($_SESSION['alogin']) == "") {
         $(document).ready(function () {
             let formData = {action: "GET_COST", sub_action: "GET_MASTER"};
             let dataRecords = $('#TableRecordList').DataTable({
-                'lengthMenu': [[5, 10, 20, 50, 100, 1000, 2000, 5000, 10000], [5, 10, 20, 50, 100, 1000, 2000, 5000, 10000]],
+                'lengthMenu': [[5, 10, 20, 50, 100,1000], [5, 10, 20, 50, 100,1000]],
                 'language': {
                     search: 'ค้นหา', lengthMenu: 'แสดง _MENU_ รายการ',
                     info: 'หน้าที่ _PAGE_ จาก _PAGES_',
@@ -201,12 +201,10 @@ if (strlen($_SESSION['alogin']) == "") {
                 'serverSide': true,
                 'serverMethod': 'post',
                 'autoWidth': true,
-                <?php
-                if ($_SESSION['deviceType'] !== 'XXX') {
+                <?php  if ($_SESSION['deviceType']!=='xxx') {
                     echo "'scrollX': true,";
                     echo "'scrollY': 480,";
-                }
-                ?>
+                }?>
                 'ajax': {
                     'url': 'model/manage_price_cost_process.php',
                     'data': formData
