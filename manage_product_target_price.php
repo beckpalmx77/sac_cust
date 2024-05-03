@@ -308,6 +308,10 @@ if (strlen($_SESSION['alogin']) == "") {
                 'processing': true,
                 'serverSide': true,
                 'serverMethod': 'post',
+                <?php  if ($_SESSION['deviceType']!=='xxx') {
+                    echo "'scrollX': true,";
+                    echo "'scrollY': 480,";
+                }?>
                 'ajax': {
                     'url': 'model/manage_product_target_price_process.php',
                     'data': formData
