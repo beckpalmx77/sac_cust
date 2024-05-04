@@ -7,6 +7,21 @@ $where_date = "";
 $where_ar_code = "";
 $AR_CODE = $_POST["AR_CODE"];
 
+$TRD_QTY = 0;
+$ALL_TRD_QTY = 0;
+
+$TRD_Q_FREE = 0;
+$ALL_TRD_Q_FREE = 0;
+
+$TOTAL_PRICE = 0;
+$ALL_TOTAL_PRICE = 0;
+
+$PROFIT_U_PRICE = 0;
+$ALL_PROFIT_U_PRICE = 0;
+
+$GROSS_PROFIT = 0;
+$ALL_GROSS_PROFIT = 0;
+
 $doc_date_start = substr($_POST['doc_date_start'], 6, 4) . "-" . substr($_POST['doc_date_start'], 3, 2) . "-" . substr($_POST['doc_date_start'], 0, 2);
 $doc_date_to = substr($_POST['doc_date_to'], 6, 4) . "-" . substr($_POST['doc_date_to'], 3, 2) . "-" . substr($_POST['doc_date_to'], 0, 2);
 
@@ -59,14 +74,29 @@ $results = $query->fetchAll(PDO::FETCH_OBJ);
 //if ($query->rowCount() >= 1) {
     foreach ($results as $result) {
 
+        $TRD_QTY = (double)str_replace(",", "", $result->TRD_QTY);
+        $ALL_TRD_QTY = $ALL_TRD_QTY + (double)str_replace(",", "", $result->TRD_QTY);
+
+        $TRD_Q_FREE = (double)str_replace(",", "", $result->TRD_Q_FREE);
+        $ALL_TRD_Q_FREE = $ALL_TRD_Q_FREE + (double)str_replace(",", "", $result->TRD_Q_FREE);
+
+        $TOTAL_PRICE = (double)str_replace(",", "", $result->TOTAL_PRICE);
+        $ALL_TOTAL_PRICE = $ALL_TOTAL_PRICE + (double)str_replace(",", "", $result->TOTAL_PRICE);
+
+        $PROFIT_U_PRICE = (double)str_replace(",", "", $result->PROFIT_U_PRICE);
+        $ALL_PROFIT_U_PRICE = $ALL_PROFIT_U_PRICE + (double)str_replace(",", "", $result->PROFIT_U_PRICE);
+
+        $GROSS_PROFIT = (double)str_replace(",", "", $result->GROSS_PROFIT);
+        $ALL_GROSS_PROFIT = $ALL_GROSS_PROFIT + (double)str_replace(",", "", $result->GROSS_PROFIT);
+
         $data .= $result->AR_CODE . ",";
         $data .= str_replace(",", "", $result->AR_NAME) . ",";
         $data .= $result->DI_DATE . ",";
         $data .= $result->DI_REF . ",";
         $data .= str_replace(",", "", $result->SKU_CODE) . ",";
         $data .= str_replace(",", "", $result->SKU_NAME) . ",";
-        $data .= str_replace(",", "", $result->TRD_QTY) . ",";
-        $data .= str_replace(",", "", $result->TRD_Q_FREE) . ",";
+        $data .= $TRD_QTY . ",";
+        $data .= $TRD_Q_FREE . ",";
         $data .= str_replace(",", "", $result->TRD_U_PRC) . ",";
         $data .= str_replace(",", "", $result->DISCOUNT1) . ",";
         $data .= str_replace(",", "", $result->DISCOUNT2) . ",";
@@ -75,9 +105,9 @@ $results = $query->fetchAll(PDO::FETCH_OBJ);
         $data .= str_replace(",", "", $result->LOGISTIC) . ",";
         $data .= str_replace(",", "", $result->AVG_COST_PRICE) . ",";
         $data .= str_replace(",", "", $result->AVG_COST_PRICE_LOGISTIC) . ",";
-        $data .= str_replace(",", "", $result->TOTAL_PRICE) . ",";
-        $data .= str_replace(",", "", $result->PROFIT_U_PRICE) . ",";
-        $data .= str_replace(",", "", $result->GROSS_PROFIT) . ",";
+        $data .= $TOTAL_PRICE . ",";
+        $data .= $PROFIT_U_PRICE . ",";
+        $data .= $GROSS_PROFIT . ",";
         $data .= str_replace(",", "", $result->TOTAL_LOGISTIC) . ",";
         $data .= str_replace(",", "", $result->PROFIT_U_PERCENT) . ",";
         $data .= str_replace(",", "", $result->PRICE_BY_CRDR) . ",";
@@ -92,6 +122,7 @@ $results = $query->fetchAll(PDO::FETCH_OBJ);
 
 }
 
+        $data .= ",,,,,," . $ALL_TRD_QTY . "," . $ALL_TRD_Q_FREE . ",,,,,,,,," . $ALL_TOTAL_PRICE . "," . $ALL_PROFIT_U_PRICE . "," . $ALL_GROSS_PROFIT . "\n";
 
 // $data = iconv("utf-8", "tis-620", $data);
 $data = iconv("utf-8", "windows-874//IGNORE", $data);
