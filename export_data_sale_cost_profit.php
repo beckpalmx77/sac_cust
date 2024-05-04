@@ -267,7 +267,7 @@ if (strlen($_SESSION['alogin']) == "") {
 
             $("#selCustomer").select2({
                 ajax: {
-                    url: "model/customer_data_ajaxfile.php",
+                    url: "model/customer_product_price_cost_ajaxfile.php",
                     type: "post",
                     dataType: 'json',
                     delay: 250,
