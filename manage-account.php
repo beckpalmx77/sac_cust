@@ -47,7 +47,7 @@ if (strlen($_SESSION['alogin']) == "") {
                                                 <thead>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th>Email</th>
+                                                    <th>User ID</th>
                                                     <th>First Name</th>
                                                     <th>Last Name</th>
                                                     <th>Type</th>
@@ -59,7 +59,7 @@ if (strlen($_SESSION['alogin']) == "") {
                                                 <tfoot>
                                                 <tr>
                                                     <th>#</th>
-                                                    <th>Email</th>
+                                                    <th>User ID</th>
                                                     <th>First Name</th>
                                                     <th>Last Name</th>
                                                     <th>Type</th>
@@ -128,7 +128,7 @@ if (strlen($_SESSION['alogin']) == "") {
                                                 value="<?php echo htmlentities($result->permission_id); ?>"
                                                 selected><?php echo htmlentities($result->permission_detail); ?></option>
                                         <?php $sql1 = "SELECT * from ims_permission";
-                                        $query1 = $conn->prepare($sql1);
+                                        $query1 = $conn_cust->prepare($sql1);
                                         $query1->execute();
                                         $results1 = $query1->fetchAll(PDO::FETCH_OBJ);
                                         if ($query1->rowCount() > 0) {
