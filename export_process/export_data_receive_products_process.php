@@ -18,7 +18,7 @@ if ($_POST['BRN_CODE']==="ALL") {
     $tires_brand_cond =  "'AT','LE','LL','LLIT'";
     $tires_brand = " AND BRAND.BRN_CODE IN (" . $tires_brand_cond . ")";
 } else {
-    $tires_brand = " AND BRAND.BRN_CODE = '" . $_POST['BRN_CODE'] . "' " ;
+    $tires_brand = " AND BRAND.BRN_CODE LIKE '" . $_POST['BRN_CODE'] . "%' " ;
 }
 
 
@@ -34,6 +34,7 @@ $my_file = fopen("sql_str1.txt", "w") or die("Unable to open file!");
 fwrite($my_file, $String_Sql);
 fclose($my_file);
 */
+
 
 
 $data = "เลขที่เอกสาร,วันที่,รหัสผู้ขาย,ชื่อผู้ขาย,รหัสสินค้า,รายละเอียดสินค้า,รหัสยี่ห้อ,ชื่อยี่ห้อ,จำนวน,แถม,ราคาต่อหน่วย,จำนวนเงิน,%ส่วนลด,จำนวนเงินส่วนลด,VAT,จำนวนเงิน+VAT\n";
