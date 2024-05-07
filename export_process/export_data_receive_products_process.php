@@ -11,8 +11,6 @@ include('../config/connect_sqlserver.php');
 include('../cond_file/doc_info_receive_products.php');
 
 
-
-
 if ($_POST['BRN_CODE']==="ALL") {
 
     $tires_brand_cond =  "'AT','LE','LL','LLIT'";
