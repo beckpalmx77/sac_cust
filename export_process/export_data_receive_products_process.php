@@ -13,7 +13,7 @@ include('../cond_file/doc_info_receive_products.php');
 
 if ($_POST['BRN_CODE']==="ALL") {
 
-    $tires_brand_cond =  "'AT','LE','LL','LLIT'";
+    $tires_brand_cond =  "'AT','LE','LL'";
     $tires_brand = " AND BRAND.BRN_CODE IN (" . $tires_brand_cond . ")";
 } else {
     $tires_brand = " AND BRAND.BRN_CODE LIKE '" . $_POST['BRN_CODE'] . "%' " ;
