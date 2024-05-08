@@ -1,10 +1,10 @@
 <?php
 include('../config/connect_db_sac.php');
+include('../cond_file/doc_info_receive_products.php');
 
 date_default_timezone_set('Asia/Bangkok');
 
 $where_date = "";
-$AR_CODE = $_POST["AR_CODE"];
 
 $point = 0;
 $total_point = 0;
@@ -27,29 +27,13 @@ if ($doc_date_start !== "" && $doc_date_to !== "") {
     $where_date = " AND STR_TO_DATE(DI_DATE, '%d/%m/%Y') BETWEEN '" . $doc_date_start . "' AND '" . $doc_date_to . "'";
 }
 
-$sql_customer_name = " SELECT AR_NAME FROM ims_customer_arcode where AR_CODE = '" . $AR_CODE . "'";
-
-$stmt_customer_name = $conn_sac->prepare($sql_customer_name);
-$stmt_customer_name->execute();
-$row_customer = $stmt_customer_name->fetchAll();
-foreach ($row_customer as $row_customers) {
-    $customer_name = $row_customers["AR_NAME"];
-}
-
-/*
-$my_file = fopen("Sale_D-CUST1.txt", "w") or die("Unable to open file!");
-fwrite($my_file, " myCheck  = " . $doc_date_start);
-fclose($my_file);
-*/
-
-
-$filename = "Exp2-Customer-" . $AR_CODE . "-" . date('m/d/Y H:i:s', time()) . ".csv";
+$filename = "SAC-POINT-" . date('m/d/Y H:i:s', time()) . ".csv";
 
 @header('Content-type: text/csv; charset=UTF-8');
 @header('Content-Encoding: UTF-8');
 @header("Content-Disposition: attachment; filename=" . $filename);
 
-$data = $AR_CODE . " - " . $customer_name . " วันที่ " . $_POST['doc_date_start'] . " ถึง " . $_POST['doc_date_to'] . "\n";
+$data = "SAC POINT " . " วันที่ " . $_POST['doc_date_start'] . " ถึง " . $_POST['doc_date_to'] . "\n";
 $data .= "\n";
 $data .= "รหัสลูกค้า,ชื่อลูกค้า,เลขที่เอกสาร,วันที่,เดือน,ปี,ยี่ห้อ,รหัสสินค้า,รายละเอียด,ขนาดยาง,จำนวน,คะแนน (ต่อเส้น),คะแนน (รวม),ราคาต่อหน่วย,ราคารวม\n";
 
@@ -71,13 +55,12 @@ foreach ($tires_brand as $tr_brand) {
 
         $sql_tires = " SELECT AR_CODE,AR_NAME,DI_REF,DI_DATE,DI_MONTH_NAME,DI_YEAR,BRN_CODE,SKU_CODE,SKU_NAME,'" . $tr_size . "' AS TIRES_SIZE,TRD_QTY,TRD_U_PRC,TRD_G_KEYIN
                        FROM ims_product_sale_sac  
-                       WHERE AR_CODE = '" . $AR_CODE . "' AND BRN_CODE = '" . $tr_brand . "'" . $where_tires_size
-            // . " AND TRD_QTY > 0"
+                       WHERE AR_CODE = '" . $AR_CODE . "' AND BRN_CODE = '" . $tr_brand . "'" . $where_tires_size . " AND TRD_QTY > 0"
             . $where_date
             . " ORDER BY BRN_CODE,CAST(DI_YEAR AS UNSIGNED) ASC , CAST(DI_MONTH AS UNSIGNED) ASC ";
 
 /*
-        $my_file = fopen("sql_tires1.txt", "w") or die("Unable to open file!");
+        $my_file = fopen("sql_tires.txt", "w") or die("Unable to open file!");
         fwrite($my_file, $sql_tires);
         fclose($my_file);
 */

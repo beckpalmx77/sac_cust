@@ -13,27 +13,24 @@ include('../cond_file/doc_info_receive_products.php');
 
 if ($_POST['BRN_CODE']==="ALL") {
 
-    $tires_brand_cond =  "'AT','LE','LL'";
+    $tires_brand_cond =  "'AT','LE','LL','LLIT'";
     $tires_brand = " AND BRAND.BRN_CODE IN (" . $tires_brand_cond . ")";
 } else {
     $tires_brand = " AND BRAND.BRN_CODE LIKE '" . $_POST['BRN_CODE'] . "%' " ;
 }
 
-
 $doc_date_start = substr($_POST['doc_date_start'], 6, 4) . "/" . substr($_POST['doc_date_start'], 3, 2) . "/" . substr($_POST['doc_date_start'], 0, 2);
 $doc_date_to = substr($_POST['doc_date_to'], 6, 4) . "/" . substr($_POST['doc_date_to'], 3, 2) . "/" . substr($_POST['doc_date_to'], 0, 2);
 
-$String_Sql = $select_query_return . $sql_cond_return . " AND DOCINFO.DI_DATE BETWEEN '" . $doc_date_start . "' AND '" . $doc_date_to . "' "
+$String_Sql = $str_query_select . $str_query_from. $str_query_where . " AND DOCINFO.DI_DATE BETWEEN '" . $doc_date_start . "' AND '" . $doc_date_to . "' "
     . $tires_brand
-    . $sql_order_return;
+    . $str_query_order;
 
 /*
 $my_file = fopen("sql_str1.txt", "w") or die("Unable to open file!");
 fwrite($my_file, $String_Sql);
 fclose($my_file);
 */
-
-
 
 $data = "เลขที่เอกสาร,วันที่,รหัสผู้ขาย,ชื่อผู้ขาย,รหัสสินค้า,รายละเอียดสินค้า,รหัสยี่ห้อ,ชื่อยี่ห้อ,จำนวน,แถม,ราคาต่อหน่วย,จำนวนเงิน,%ส่วนลด,จำนวนเงินส่วนลด,VAT,จำนวนเงิน+VAT\n";
 

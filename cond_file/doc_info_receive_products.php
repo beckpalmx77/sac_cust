@@ -1,6 +1,6 @@
 <?php
 
-$select_query_return=
+$str_query_select=
  " SELECT 
  DOCINFO.DI_REF, 
  FORMAT (DOCINFO.DI_DATE, 'dd/MM/yyyy ') as DI_DATE,
@@ -67,7 +67,9 @@ $select_query_return=
  TRANSTKD.TRD_SH_REMARK,
   APDETAIL.APD_BIL_DA,
 BR_CODE,
-DI_ACTIVE
+DI_ACTIVE ";
+
+$str_query_from =" 
 FROM
  DOCINFO,
  DOCTYPE,
@@ -94,7 +96,7 @@ FROM
  BRANCH
  ";
 
-$sql_cond_return=" 
+$str_query_where=" 
 WHERE
  (DOCINFO.DI_DT=DOCTYPE.DT_KEY) AND
  (DOCTYPE.DT_PROPERTIES=303)  AND
@@ -120,7 +122,7 @@ WHERE
  (SKUMASTER.SKU_SKUALT = SKUALT.SKUALT_KEY) AND
  TRH_BR=BR_KEY ";
 
-$sql_order_return=" 
+$str_query_order=" 
  ORDER BY
  DOCINFO.DI_DATE ASC,	
  DOCINFO.DI_REF ASC,	

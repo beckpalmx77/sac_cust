@@ -75,13 +75,11 @@ foreach ($tires_brand as $tr_brand) {
             // . " AND TRD_QTY > 0"
             . $where_date
             . " ORDER BY BRN_CODE,CAST(DI_YEAR AS UNSIGNED) ASC , CAST(DI_MONTH AS UNSIGNED) ASC ";
-
 /*
-        $my_file = fopen("sql_tires1.txt", "w") or die("Unable to open file!");
+        $my_file = fopen("sql_tires.txt", "w") or die("Unable to open file!");
         fwrite($my_file, $sql_tires);
         fclose($my_file);
 */
-
 
         $statement_tires = $conn_sac->query($sql_tires);
         $results_tires = $statement_tires->fetchAll(PDO::FETCH_ASSOC);
