@@ -1,7 +1,7 @@
 <?php
 
 $str_query_select=
- " SELECT 
+    " SELECT 
  DOCINFO.DI_REF, 
  FORMAT (DOCINFO.DI_DATE, 'dd/MM/yyyy ') as DI_DATE,
  DOCINFO.DI_CRE_BY,
@@ -70,7 +70,11 @@ $str_query_select=
  BR_CODE,
  DI_ACTIVE,
  DT_DOCCODE,
- DI_KEY ";
+ DAY(DI_DATE) AS DI_DAY ,
+ MONTH(DI_DATE) AS DI_MONTH ,
+ YEAR(DI_DATE) AS DI_YEAR,
+ DI_KEY
+ ";
 
 $str_query_from =" 
 FROM
