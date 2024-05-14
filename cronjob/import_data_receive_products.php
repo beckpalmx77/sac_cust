@@ -76,7 +76,6 @@ while ($result_sqlsvr = $stmt_sqlsvr->fetch(PDO::FETCH_ASSOC)) {
         $query->bindParam(':DI_MONTH', $result_sqlsvr["DI_MONTH"], PDO::PARAM_STR);
         $query->bindParam(':DI_MONTH_NAME', $month_arr[$result_sqlsvr["DI_MONTH"]], PDO::PARAM_STR);
         $query->bindParam(':DI_YEAR', $result_sqlsvr["DI_YEAR"], PDO::PARAM_STR);
-
         $query->bindParam(':TRD_QTY', $result_sqlsvr["TRD_QTY"],  PDO::PARAM_STR);
         $query->bindParam(':TRD_SH_QTY', $result_sqlsvr["TRD_SH_QTY"],  PDO::PARAM_STR);
         $query->bindParam(':TRD_Q_FREE', $result_sqlsvr["TRD_Q_FREE"],  PDO::PARAM_STR);
@@ -86,7 +85,6 @@ while ($result_sqlsvr = $stmt_sqlsvr->fetch(PDO::FETCH_ASSOC)) {
         $query->bindParam(':TRD_DSC_KEYINV', $result_sqlsvr["TRD_DSC_KEYINV"],  PDO::PARAM_STR);
         $query->bindParam(':TRD_TDSC_KEYINV', $result_sqlsvr["TRD_TDSC_KEYINV"],  PDO::PARAM_STR);
         $query->bindParam(':TRD_U_PRC', $result_sqlsvr["TRD_U_PRC"],  PDO::PARAM_STR);
-
         $query->bindParam(':TRD_G_SELL', $result_sqlsvr["TRD_G_SELL"],  PDO::PARAM_STR);
         $query->bindParam(':TRD_G_VAT', $result_sqlsvr["TRD_G_VAT"],  PDO::PARAM_STR);
         $query->bindParam(':TRD_G_AMT', $result_sqlsvr["TRD_G_AMT"],  PDO::PARAM_STR);
@@ -94,12 +92,10 @@ while ($result_sqlsvr = $stmt_sqlsvr->fetch(PDO::FETCH_ASSOC)) {
         $query->bindParam(':TRD_B_VAT', $result_sqlsvr["TRD_B_VAT"],  PDO::PARAM_STR);
         $query->bindParam(':TRD_B_AMT', $result_sqlsvr["TRD_B_AMT"],  PDO::PARAM_STR);
         $query->bindParam(':TRD_VAT_TY', $result_sqlsvr["TRD_VAT_TY"],  PDO::PARAM_STR);
-
         $query->bindParam(':TRD_UTQNAME', $result_sqlsvr["TRD_UTQNAME"],  PDO::PARAM_STR);
         $query->bindParam(':TRD_UTQQTY', $result_sqlsvr["TRD_UTQQTY"],  PDO::PARAM_STR);
         $query->bindParam(':TRD_VAT_R', $result_sqlsvr["TRD_VAT_R"],  PDO::PARAM_STR);
         $query->bindParam(':TRD_REFER_REF', $result_sqlsvr["TRD_REFER_REF"],  PDO::PARAM_STR);
-
         $query->bindParam(':VAT_RATE', $result_sqlsvr["VAT_RATE"],  PDO::PARAM_STR);
         $query->bindParam(':VAT_REF', $result_sqlsvr["VAT_REF"],  PDO::PARAM_STR);
         $query->bindParam(':VAT_DATE', $result_sqlsvr["VAT_DATE"],  PDO::PARAM_STR);
@@ -115,12 +111,10 @@ while ($result_sqlsvr = $stmt_sqlsvr->fetch(PDO::FETCH_ASSOC)) {
         $query->bindParam(':TRH_N_ITEMS', $result_sqlsvr["TRH_N_ITEMS"],  PDO::PARAM_STR);
         $query->bindParam(':APD_TDSC_KEYIN', $result_sqlsvr["APD_TDSC_KEYIN"],  PDO::PARAM_STR);
         $query->bindParam(':APD_TDSC_KEYINV', $result_sqlsvr["APD_TDSC_KEYINV"],  PDO::PARAM_STR);
-
         $query->bindParam(':WH_CODE', $result_sqlsvr["WH_CODE"],  PDO::PARAM_STR);
         $query->bindParam(':WH_NAME', $result_sqlsvr["WH_NAME"],  PDO::PARAM_STR);
         $query->bindParam(':WL_CODE', $result_sqlsvr["WL_CODE"],  PDO::PARAM_STR);
         $query->bindParam(':WL_NAME', $result_sqlsvr["WL_NAME"],  PDO::PARAM_STR);
-
         $query->bindParam(':DI_ACTIVE', $result_sqlsvr["DI_ACTIVE"],  PDO::PARAM_STR);
         $query->bindParam(':DI_KEY', $result_sqlsvr["DI_KEY"],  PDO::PARAM_STR);
         $query->bindParam(':DI_REF', $result_sqlsvr["DI_REF"],  PDO::PARAM_STR);
