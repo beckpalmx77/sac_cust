@@ -1,0 +1,1048 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-874">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 15">
+<link id=Main-File rel=Main-File href="../import-cost_excel_example.htm">
+<link rel=File-List href=filelist.xml>
+<link rel=Stylesheet href=stylesheet.css>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:.75in .7in .75in .7in;
+	mso-header-margin:.3in;
+	mso-footer-margin:.3in;
+	mso-page-orientation:landscape;}
+-->
+</style>
+<![if !supportTabStrip]><script language="JavaScript">
+<!--
+function fnUpdateTabs()
+ {
+  if (parent.window.g_iIEVer>=4) {
+   if (parent.document.readyState=="complete"
+    && parent.frames['frTabs'].document.readyState=="complete")
+   parent.fnSetActiveSheet(0);
+  else
+   window.setTimeout("fnUpdateTabs();",150);
+ }
+}
+
+if (window.name!="frSheet")
+ window.location.replace("../import-cost_excel_example.htm");
+else
+ fnUpdateTabs();
+//-->
+</script>
+<![endif]>
+</head>
+
+<body link="#0563C1" vlink="#954F72">
+
+<table border=0 cellpadding=0 cellspacing=0 width=3744 style='border-collapse:
+ collapse;table-layout:fixed;width:2808pt'>
+ <col width=96 span=10 style='width:72pt'>
+ <col width=96 style='width:72pt'>
+ <col width=96 span=28 style='width:72pt'>
+ <tr height=125 style='height:93.75pt'>
+  <td height=125 class=xl65 width=96 style='height:93.75pt;width:72pt'>รหัสลูกค้า</td>
+  <td class=xl65 width=96 style='border-left:none;width:72pt'>ชื่อลูกค้า</td>
+  <td class=xl65 width=96 style='border-left:none;width:72pt'>วันที่</td>
+  <td class=xl65 width=96 style='border-left:none;width:72pt'>เลขที่เอกสาร</td>
+  <td class=xl65 width=96 style='border-left:none;width:72pt'>รหัสสินค้าตาม B
+  Plus</td>
+  <td class=xl65 width=96 style='border-left:none;width:72pt'>ขนาดยาง/ดอกยาง</td>
+  <td class=xl66 width=96 style='border-left:none;width:72pt'><span
+  style='mso-spacerun:yes'>&nbsp;</span>จำนวนเส้น<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl66 width=96 style='border-left:none;width:72pt'><span
+  style='mso-spacerun:yes'>&nbsp;</span>แถม<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl66 width=96 style='border-left:none;width:72pt'><span
+  style='mso-spacerun:yes'>&nbsp;</span>ราคาขายต่อเส้น<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl67 width=96 style='border-left:none;width:72pt'><span
+  style='mso-spacerun:yes'>&nbsp;</span>ส่วนลดบัตรโลตัส<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl67 width=96 style='border-left:none;width:72pt'><span
+  style='mso-spacerun:yes'>&nbsp;</span>มูลค่าบัตรโลตัส<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl67 width=96 style='border-left:none;width:72pt'><span
+  style='mso-spacerun:yes'>&nbsp;</span>ราคาขายต่อเส้นหลังหักส่วนลด<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl68 width=96 style='border-left:none;width:72pt'>ชื่อพนักงานขายและเทค</td>
+  <td class=xl69 width=96 style='border-left:none;width:72pt'>เงือนไข</td>
+  <td class=xl70 width=96 style='border-left:none;width:72pt'>ประเภทสินค้า</td>
+  <td class=xl71 width=96 style='border-left:none;width:72pt'>ทุนเฉลี่ย</td>
+  <td class=xl72 width=96 style='border-left:none;width:72pt'><span
+  style='mso-spacerun:yes'>&nbsp;</span>ค่าขนส่ง<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl72 width=96 style='border-left:none;width:72pt'><span
+  style='mso-spacerun:yes'>&nbsp;</span>ราคาทุนเฉลี่ย<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl73 width=96 style='border-left:none;width:72pt'><span
+  style='mso-spacerun:yes'>&nbsp;</span>ราคาทุนเฉลี่ยรวมขนส่ง<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl74 width=96 style='border-left:none;width:72pt'>ยอดขายรวม</td>
+  <td class=xl75 width=96 style='border-left:none;width:72pt'>กำไรต่อเส้น(บิลขาย-ทุนเฉลี่ย</td>
+  <td class=xl75 width=96 style='border-left:none;width:72pt'>ผลตอบแทนรวม</td>
+  <td class=xl75 width=96 style='border-left:none;width:72pt'>ค่าขนส่งรวม</td>
+  <td class=xl76 width=96 style='border-left:none;width:72pt'>หมายเหตุ(1)</td>
+  <td class=xl77 width=96 style='border-left:none;width:72pt'><span
+  style='mso-spacerun:yes'>&nbsp;</span>%กำไรต่อเส้น(บิลขาย-ราคาขาย)<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl78 width=96 style='border-left:none;width:72pt'>รหัสใบราคา</td>
+  <td class=xl79 width=96 style='border-left:none;width:72pt'><span
+  style='mso-spacerun:yes'>&nbsp;</span>ราคาตามใบขาย(เครดิต/เงินสด)<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl80 width=96 style='border-left:none;width:72pt'><span
+  style='mso-spacerun:yes'>&nbsp;</span>ส่วนต่างบิลขาย-ใบราคา<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl81 width=96 style='border-left:none;width:72pt'>หมายเหตุ(2)</td>
+  <td class=xl82 width=96 style='border-left:none;width:72pt'><span
+  style='mso-spacerun:yes'>&nbsp;</span>%ส่วนต่าง(บิลขาย-ใบราคา)<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl76 width=96 style='border-left:none;width:72pt'>หมายเหตุเพิ่มเติม</td>
+  <td class=xl83 width=96 style='border-left:none;width:72pt'>ยี่ห้อ</td>
+  <td class=xl83 width=96 style='border-left:none;width:72pt'>ประเภท</td>
+  <td class=xl76 width=96 style='border-left:none;width:72pt'>พนักงานขาย</td>
+  <td class=xl76 width=96 style='border-left:none;width:72pt'>คนเทค</td>
+  <td class=xl83 width=96 style='border-left:none;width:72pt'>เครดิต</td>
+  <td class=xl84 width=96 style='width:72pt'><span
+  style='mso-spacerun:yes'>&nbsp;</span>ราคาขายจริง<span
+  style='mso-spacerun:yes'>&nbsp;</span></td>
+  <td class=xl85 width=96 style='border-left:none;width:72pt'>ส่วนลด/เส้น</td>
+  <td class=xl85 width=96 style='border-left:none;width:72pt'>มูลค่าส่วนลดรวม</td>
+ </tr>
+ <tr height=29 style='height:21.75pt'>
+  <td height=29 class=xl86 align=left style='height:21.75pt;border-top:none'>SAC.0000<span
+  style='display:none'>016</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>บริษัท
+  ลัคกี้<span style='display:none'>แคร์ริเออร์ จำกัด</span></td>
+  <td class=xl87 style='border-top:none;border-left:none'>01/04/2024</td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>IV012567<span
+  style='display:none'>04/014</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>LL100020<span
+  style='display:none'>18-KTA303(ชุด)</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>10.00R20 <span
+  style='display:none'>18PR KTA303 149/146K LL ECE-S TIS (ชุด)</span></td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>8.00 </td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl88 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl89 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl89 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl90 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>ธวัชชัย
+  (นิว<span style='display:none'>) ผู้ใช้/พัชรมณฑ์ (เอ)</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>45
+  วันไม่นั<span style='display:none'>บเดือนส่ง/VAT</span></td>
+  <td class=xl91 style='border-top:none;border-left:none'>ยางกลางใ<span
+  style='display:none'>หญ่ TBR</span></td>
+  <td class=xl92 align=left style='border-top:none;border-left:none'>LL100020<span
+  style='display:none'>18-KTA303(ชุด)</span></td>
+  <td class=xl93 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl93 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl94 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl95 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl96 align=right style='border-top:none;border-left:none'>880.01 </td>
+  <td class=xl97 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl98 align=right style='border-top:none;border-left:none'>0.00 </td>
+  <td class=xl99 align=left style='border-top:none;border-left:none'>กำไร</td>
+  <td class=xl100 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp; </span>13.44 %</td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>LL100020<span
+  style='display:none'>18-KTA303(ชุด)</span></td>
+  <td class=xl102 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl103 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>150.01 </td>
+  <td class=xl104 align=left style='border-top:none;border-left:none'>กำไร</td>
+  <td class=xl105 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>2.34 %</td>
+  <td class=xl106 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl106 style='border-top:none;border-left:none'>LLIT</td>
+  <td class=xl106 style='border-top:none;border-left:none'>ยางกลางใหญ่ TBR</td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>ธวัชชัย
+  (นิว<span style='display:none'>) ผู้ใช้</span></td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>พัชรมณฑ์
+  (<span style='display:none'>เอ)</span></td>
+  <td class=xl107 align=left style='border-top:none;border-left:none'>45
+  วันไม่นั<span style='display:none'>บเดือนส่ง/VAT</span></td>
+  <td class=xl102 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl108 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl109 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=29 style='height:21.75pt'>
+  <td height=29 class=xl86 align=left style='height:21.75pt;border-top:none'>SAC.0000<span
+  style='display:none'>016</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>บริษัท
+  ลัคกี้<span style='display:none'>แคร์ริเออร์ จำกัด</span></td>
+  <td class=xl87 style='border-top:none;border-left:none'>01/04/2024</td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>IV012567<span
+  style='display:none'>04/014</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>CLL10002<span
+  style='display:none'>0-RA</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>ยางใน 10.<span
+  style='display:none'>00R20(ซื้อพร้อมยางนอกเท่านั้น)</span></td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>8.00 </td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>1.00 </td>
+  <td class=xl89 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl89 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl90 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>1.00 </td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>ธวัชชัย
+  (นิว<span style='display:none'>) ผู้ใช้/พัชรมณฑ์ (เอ)</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>45
+  วันไม่นั<span style='display:none'>บเดือนส่ง/VAT</span></td>
+  <td class=xl91 style='border-top:none;border-left:none'>ยางใน</td>
+  <td class=xl92 align=left style='border-top:none;border-left:none'>CLL10002<span
+  style='display:none'>0-RA</span></td>
+  <td class=xl93 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl93 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl94 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl95 align=right style='border-top:none;border-left:none'>0.00 </td>
+  <td class=xl96 align=right style='border-top:none;border-left:none'>0.00 </td>
+  <td class=xl97 align=right style='border-top:none;border-left:none'>0.00 </td>
+  <td class=xl98 align=right style='border-top:none;border-left:none'>0.00 </td>
+  <td class=xl99 align=left style='border-top:none;border-left:none'>ของแจกข<span
+  style='display:none'>องแถม</span></td>
+  <td class=xl100 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>CLL10002<span
+  style='display:none'>0-RA</span></td>
+  <td class=xl102 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl103 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl104 align=left style='border-top:none;border-left:none'>ของแจกข<span
+  style='display:none'>องแถม</span></td>
+  <td class=xl105 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl106 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl106 style='border-top:none;border-left:none'>LLIT</td>
+  <td class=xl106 style='border-top:none;border-left:none'>ยางใน</td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>ธวัชชัย
+  (นิว<span style='display:none'>) ผู้ใช้</span></td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>พัชรมณฑ์
+  (<span style='display:none'>เอ)</span></td>
+  <td class=xl107 align=left style='border-top:none;border-left:none'>45
+  วันไม่นั<span style='display:none'>บเดือนส่ง/VAT</span></td>
+  <td class=xl102 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl108 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl109 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=29 style='height:21.75pt'>
+  <td height=29 class=xl86 align=left style='height:21.75pt;border-top:none'>SAC.0000<span
+  style='display:none'>016</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>บริษัท
+  ลัคกี้<span style='display:none'>แคร์ริเออร์ จำกัด</span></td>
+  <td class=xl87 style='border-top:none;border-left:none'>01/04/2024</td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>IV012567<span
+  style='display:none'>04/014</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>LLL90010<span
+  style='display:none'>00-RA</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>ยางรอง 9.<span
+  style='display:none'>00/10.00R20(ซื้อพร้อมยางนอกเท่านั้น)</span></td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>8.00 </td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>1.00 </td>
+  <td class=xl89 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl89 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl90 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>1.00 </td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>ธวัชชัย
+  (นิว<span style='display:none'>) ผู้ใช้/พัชรมณฑ์ (เอ)</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>45
+  วันไม่นั<span style='display:none'>บเดือนส่ง/VAT</span></td>
+  <td class=xl91 style='border-top:none;border-left:none'>ยางรอง</td>
+  <td class=xl92 align=left style='border-top:none;border-left:none'>LLL90010<span
+  style='display:none'>00-RA</span></td>
+  <td class=xl93 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl93 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl94 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl95 align=right style='border-top:none;border-left:none'>0.00 </td>
+  <td class=xl96 align=right style='border-top:none;border-left:none'>0.00 </td>
+  <td class=xl97 align=right style='border-top:none;border-left:none'>0.00 </td>
+  <td class=xl98 align=right style='border-top:none;border-left:none'>0.00 </td>
+  <td class=xl99 align=left style='border-top:none;border-left:none'>ของแจกข<span
+  style='display:none'>องแถม</span></td>
+  <td class=xl100 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>LLL90010<span
+  style='display:none'>00-RA</span></td>
+  <td class=xl102 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl103 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl104 align=left style='border-top:none;border-left:none'>ของแจกข<span
+  style='display:none'>องแถม</span></td>
+  <td class=xl105 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl106 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl106 style='border-top:none;border-left:none'>LLIT</td>
+  <td class=xl106 style='border-top:none;border-left:none'>ยางรอง</td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>ธวัชชัย
+  (นิว<span style='display:none'>) ผู้ใช้</span></td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>พัชรมณฑ์
+  (<span style='display:none'>เอ)</span></td>
+  <td class=xl107 align=left style='border-top:none;border-left:none'>45
+  วันไม่นั<span style='display:none'>บเดือนส่ง/VAT</span></td>
+  <td class=xl102 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl108 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl109 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=29 style='height:21.75pt'>
+  <td height=29 class=xl86 align=left style='height:21.75pt;border-top:none'>SAC.0000<span
+  style='display:none'>016</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>บริษัท
+  ลัคกี้<span style='display:none'>แคร์ริเออร์ จำกัด</span></td>
+  <td class=xl87 style='border-top:none;border-left:none'>01/04/2024</td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>IV012567<span
+  style='display:none'>04/015</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>LL100020<span
+  style='display:none'>18-KTA303(ชุด)</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>10.00R20 <span
+  style='display:none'>18PR KTA303 149/146K LL ECE-S TIS (ชุด)</span></td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>2.00 </td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl88 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl89 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl89 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl90 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>ธวัชชัย
+  (นิว<span style='display:none'>) ผู้ใช้/พัชรมณฑ์ (เอ)</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>45
+  วันไม่นั<span style='display:none'>บเดือนส่ง/VAT</span></td>
+  <td class=xl91 style='border-top:none;border-left:none'>ยางกลางใ<span
+  style='display:none'>หญ่ TBR</span></td>
+  <td class=xl92 align=left style='border-top:none;border-left:none'>LL100020<span
+  style='display:none'>18-KTA303(ชุด)</span></td>
+  <td class=xl93 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl93 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl94 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl95 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl96 align=right style='border-top:none;border-left:none'>880.00 </td>
+  <td class=xl97 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl98 align=right style='border-top:none;border-left:none'>0.00 </td>
+  <td class=xl99 align=left style='border-top:none;border-left:none'>กำไร</td>
+  <td class=xl100 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp; </span>13.44 %</td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>LL100020<span
+  style='display:none'>18-KTA303(ชุด)</span></td>
+  <td class=xl102 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl103 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>150.00 </td>
+  <td class=xl104 align=left style='border-top:none;border-left:none'>กำไร</td>
+  <td class=xl105 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>2.34 %</td>
+  <td class=xl106 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl106 style='border-top:none;border-left:none'>LLIT</td>
+  <td class=xl106 style='border-top:none;border-left:none'>ยางกลางใหญ่ TBR</td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>ธวัชชัย
+  (นิว<span style='display:none'>) ผู้ใช้</span></td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>พัชรมณฑ์
+  (<span style='display:none'>เอ)</span></td>
+  <td class=xl107 align=left style='border-top:none;border-left:none'>45
+  วันไม่นั<span style='display:none'>บเดือนส่ง/VAT</span></td>
+  <td class=xl102 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl108 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl109 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=29 style='height:21.75pt'>
+  <td height=29 class=xl86 align=left style='height:21.75pt;border-top:none'>SAC.0000<span
+  style='display:none'>016</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>บริษัท
+  ลัคกี้<span style='display:none'>แคร์ริเออร์ จำกัด</span></td>
+  <td class=xl87 style='border-top:none;border-left:none'>01/04/2024</td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>IV012567<span
+  style='display:none'>04/015</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>CLL10002<span
+  style='display:none'>0-RA</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>ยางใน 10.<span
+  style='display:none'>00R20(ซื้อพร้อมยางนอกเท่านั้น)</span></td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>2.00 </td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>1.00 </td>
+  <td class=xl89 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl89 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl90 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>1.00 </td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>ธวัชชัย
+  (นิว<span style='display:none'>) ผู้ใช้/พัชรมณฑ์ (เอ)</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>45
+  วันไม่นั<span style='display:none'>บเดือนส่ง/VAT</span></td>
+  <td class=xl91 style='border-top:none;border-left:none'>ยางใน</td>
+  <td class=xl92 align=left style='border-top:none;border-left:none'>CLL10002<span
+  style='display:none'>0-RA</span></td>
+  <td class=xl93 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl93 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl94 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl95 align=right style='border-top:none;border-left:none'>0.00 </td>
+  <td class=xl96 align=right style='border-top:none;border-left:none'>0.00 </td>
+  <td class=xl97 align=right style='border-top:none;border-left:none'>0.00 </td>
+  <td class=xl98 align=right style='border-top:none;border-left:none'>0.00 </td>
+  <td class=xl99 align=left style='border-top:none;border-left:none'>ของแจกข<span
+  style='display:none'>องแถม</span></td>
+  <td class=xl100 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>CLL10002<span
+  style='display:none'>0-RA</span></td>
+  <td class=xl102 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl103 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl104 align=left style='border-top:none;border-left:none'>ของแจกข<span
+  style='display:none'>องแถม</span></td>
+  <td class=xl105 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl106 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl106 style='border-top:none;border-left:none'>LLIT</td>
+  <td class=xl106 style='border-top:none;border-left:none'>ยางใน</td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>ธวัชชัย
+  (นิว<span style='display:none'>) ผู้ใช้</span></td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>พัชรมณฑ์
+  (<span style='display:none'>เอ)</span></td>
+  <td class=xl107 align=left style='border-top:none;border-left:none'>45
+  วันไม่นั<span style='display:none'>บเดือนส่ง/VAT</span></td>
+  <td class=xl102 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl108 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl109 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=29 style='height:21.75pt'>
+  <td height=29 class=xl86 align=left style='height:21.75pt;border-top:none'>SAC.0000<span
+  style='display:none'>016</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>บริษัท
+  ลัคกี้<span style='display:none'>แคร์ริเออร์ จำกัด</span></td>
+  <td class=xl87 style='border-top:none;border-left:none'>01/04/2024</td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>IV012567<span
+  style='display:none'>04/015</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>LLL90010<span
+  style='display:none'>00-RA</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>ยางรอง 9.<span
+  style='display:none'>00/10.00R20(ซื้อพร้อมยางนอกเท่านั้น)</span></td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>2.00 </td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>1.00 </td>
+  <td class=xl89 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl89 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl90 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>1.00 </td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>ธวัชชัย
+  (นิว<span style='display:none'>) ผู้ใช้/พัชรมณฑ์ (เอ)</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>45
+  วันไม่นั<span style='display:none'>บเดือนส่ง/VAT</span></td>
+  <td class=xl91 style='border-top:none;border-left:none'>ยางรอง</td>
+  <td class=xl92 align=left style='border-top:none;border-left:none'>LLL90010<span
+  style='display:none'>00-RA</span></td>
+  <td class=xl93 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl93 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl94 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl95 align=right style='border-top:none;border-left:none'>0.00 </td>
+  <td class=xl96 align=right style='border-top:none;border-left:none'>0.00 </td>
+  <td class=xl97 align=right style='border-top:none;border-left:none'>0.00 </td>
+  <td class=xl98 align=right style='border-top:none;border-left:none'>0.00 </td>
+  <td class=xl99 align=left style='border-top:none;border-left:none'>ของแจกข<span
+  style='display:none'>องแถม</span></td>
+  <td class=xl100 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>LLL90010<span
+  style='display:none'>00-RA</span></td>
+  <td class=xl102 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl103 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl104 align=left style='border-top:none;border-left:none'>ของแจกข<span
+  style='display:none'>องแถม</span></td>
+  <td class=xl105 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl106 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl106 style='border-top:none;border-left:none'>LLIT</td>
+  <td class=xl106 style='border-top:none;border-left:none'>ยางรอง</td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>ธวัชชัย
+  (นิว<span style='display:none'>) ผู้ใช้</span></td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>พัชรมณฑ์
+  (<span style='display:none'>เอ)</span></td>
+  <td class=xl107 align=left style='border-top:none;border-left:none'>45
+  วันไม่นั<span style='display:none'>บเดือนส่ง/VAT</span></td>
+  <td class=xl102 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl108 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl109 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=29 style='height:21.75pt'>
+  <td height=29 class=xl86 align=left style='height:21.75pt;border-top:none'>SAC.0000<span
+  style='display:none'>216</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>ร้านเฮงรุ่งเรื<span
+  style='display:none'>องการยาง (นายธีรเตชินทร์ กันตพลโภคิน)</span></td>
+  <td class=xl87 style='border-top:none;border-left:none'>01/04/2024</td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>IV012567<span
+  style='display:none'>04/038</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>DS265651<span
+  style='display:none'>7-HT603</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>265/65 R1<span
+  style='display:none'>7 112H PAYAK SUV HT603 [PS6567 U] DS EU</span></td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>4.00 </td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl88 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl89 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl89 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl90 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>เสฎฐ์ขรรค์
+  <span style='display:none'>(ต้น)/พีรดาวส์ (ดาว)</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>เงินสด/VA<span
+  style='display:none'>T</span></td>
+  <td class=xl91 style='border-top:none;border-left:none'>ยางเล็ก</td>
+  <td class=xl92 align=left style='border-top:none;border-left:none'>DS265651<span
+  style='display:none'>7-HT603</span></td>
+  <td class=xl93 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>25.00 </td>
+  <td class=xl93 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl94 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl95 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl96 align=right style='border-top:none;border-left:none'>163.00 </td>
+  <td class=xl97 align=right style='border-top:none;border-left:none'>652.00 </td>
+  <td class=xl98 align=right style='border-top:none;border-left:none'>100.00 </td>
+  <td class=xl99 align=left style='border-top:none;border-left:none'>กำไร</td>
+  <td class=xl100 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>6.76 %</td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>DS265651<span
+  style='display:none'>7-HT603</span></td>
+  <td class=xl102 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl103 align=left style='border-top:none;border-left:none'><font
+  color="#FF0000" style='mso-ignore:color'>-<span
+  style='mso-spacerun:yes'>&nbsp; </span>20.00 </font></td>
+  <td class=xl104 align=left style='border-top:none;border-left:none'>ต่ำใบราคา</td>
+  <td class=xl105 align=left style='border-top:none;border-left:none'><font
+  color="#FF0000" style='mso-ignore:color'>-<span
+  style='mso-spacerun:yes'>&nbsp; </span>0.82 %</font></td>
+  <td class=xl106 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl106 style='border-top:none;border-left:none'>DS</td>
+  <td class=xl106 style='border-top:none;border-left:none'>ยางเล็ก</td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>เสฎฐ์ขรรค์
+  <span style='display:none'>(ต้น)</span></td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>พีรดาวส์
+  (ด<span style='display:none'>าว)</span></td>
+  <td class=xl107 align=left style='border-top:none;border-left:none'>เงินสด/VA<span
+  style='display:none'>T</span></td>
+  <td class=xl102 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl108 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl109 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=29 style='height:21.75pt'>
+  <td height=29 class=xl86 align=left style='height:21.75pt;border-top:none'>SAC.0000<span
+  style='display:none'>216</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>ร้านเฮงรุ่งเรื<span
+  style='display:none'>องการยาง (นายธีรเตชินทร์ กันตพลโภคิน)</span></td>
+  <td class=xl87 style='border-top:none;border-left:none'>01/04/2024</td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>IV012567<span
+  style='display:none'>04/038</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>DS19514-<span
+  style='display:none'>R401</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>195 R14C <span
+  style='display:none'>106/104P PAYAK R401 [P1954 U] DS EU</span></td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>3.00 </td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl88 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl89 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl89 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl90 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>เสฎฐ์ขรรค์
+  <span style='display:none'>(ต้น)/พีรดาวส์ (ดาว)</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>เงินสด/VA<span
+  style='display:none'>T</span></td>
+  <td class=xl91 style='border-top:none;border-left:none'>ยางเล็ก</td>
+  <td class=xl92 align=left style='border-top:none;border-left:none'>DS19514-<span
+  style='display:none'>R401</span></td>
+  <td class=xl93 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>25.00 </td>
+  <td class=xl93 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl94 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl95 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl96 align=right style='border-top:none;border-left:none'>34.00 </td>
+  <td class=xl97 align=right style='border-top:none;border-left:none'>102.00 </td>
+  <td class=xl98 align=right style='border-top:none;border-left:none'>75.00 </td>
+  <td class=xl99 align=left style='border-top:none;border-left:none'>กำไร</td>
+  <td class=xl100 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>2.58 %</td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>DS19514-<span
+  style='display:none'>R401</span></td>
+  <td class=xl102 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl103 align=left style='border-top:none;border-left:none'><font
+  color="#FF0000" style='mso-ignore:color'>-<span
+  style='mso-spacerun:yes'>&nbsp; </span>50.00 </font></td>
+  <td class=xl104 align=left style='border-top:none;border-left:none'>ต่ำใบราคา</td>
+  <td class=xl105 align=left style='border-top:none;border-left:none'><font
+  color="#FF0000" style='mso-ignore:color'>-<span
+  style='mso-spacerun:yes'>&nbsp; </span>3.65 %</font></td>
+  <td class=xl106 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl106 style='border-top:none;border-left:none'>DS</td>
+  <td class=xl106 style='border-top:none;border-left:none'>ยางเล็ก</td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>เสฎฐ์ขรรค์
+  <span style='display:none'>(ต้น)</span></td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>พีรดาวส์
+  (ด<span style='display:none'>าว)</span></td>
+  <td class=xl107 align=left style='border-top:none;border-left:none'>เงินสด/VA<span
+  style='display:none'>T</span></td>
+  <td class=xl102 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl108 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl109 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=29 style='height:21.75pt'>
+  <td height=29 class=xl86 align=left style='height:21.75pt;border-top:none'>SAC.0000<span
+  style='display:none'>216</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>ร้านเฮงรุ่งเรื<span
+  style='display:none'>องการยาง (นายธีรเตชินทร์ กันตพลโภคิน)</span></td>
+  <td class=xl87 style='border-top:none;border-left:none'>01/04/2024</td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>IV012567<span
+  style='display:none'>04/038</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>DS215701<span
+  style='display:none'>5-T88</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>215/70 R1<span
+  style='display:none'>5C 109/107R 8PR TITANZ T88 [DTT7015 D U] DS EU</span></td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>8.00 </td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl88 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl89 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl89 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl90 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>เสฎฐ์ขรรค์
+  <span style='display:none'>(ต้น)/พีรดาวส์ (ดาว)</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>เงินสด/VA<span
+  style='display:none'>T</span></td>
+  <td class=xl91 style='border-top:none;border-left:none'>ยางเล็ก</td>
+  <td class=xl92 align=left style='border-top:none;border-left:none'>DS215701<span
+  style='display:none'>5-T88</span></td>
+  <td class=xl93 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>25.00 </td>
+  <td class=xl93 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl94 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl95 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl96 align=right style='border-top:none;border-left:none'>83.00 </td>
+  <td class=xl97 align=right style='border-top:none;border-left:none'>664.00 </td>
+  <td class=xl98 align=right style='border-top:none;border-left:none'>200.00 </td>
+  <td class=xl99 align=left style='border-top:none;border-left:none'>กำไร</td>
+  <td class=xl100 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>5.50 %</td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>DS215701<span
+  style='display:none'>5-T88</span></td>
+  <td class=xl102 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl103 align=left style='border-top:none;border-left:none'><font
+  color="#FF0000" style='mso-ignore:color'>-<span
+  style='mso-spacerun:yes'>&nbsp; </span>10.00 </font></td>
+  <td class=xl104 align=left style='border-top:none;border-left:none'>ต่ำใบราคา</td>
+  <td class=xl105 align=left style='border-top:none;border-left:none'><font
+  color="#FF0000" style='mso-ignore:color'>-<span
+  style='mso-spacerun:yes'>&nbsp; </span>0.66 %</font></td>
+  <td class=xl106 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl106 style='border-top:none;border-left:none'>DS</td>
+  <td class=xl106 style='border-top:none;border-left:none'>ยางเล็ก</td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>เสฎฐ์ขรรค์
+  <span style='display:none'>(ต้น)</span></td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>พีรดาวส์
+  (ด<span style='display:none'>าว)</span></td>
+  <td class=xl107 align=left style='border-top:none;border-left:none'>เงินสด/VA<span
+  style='display:none'>T</span></td>
+  <td class=xl102 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl108 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl109 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=29 style='height:21.75pt'>
+  <td height=29 class=xl86 align=left style='height:21.75pt;border-top:none'>SAC.0000<span
+  style='display:none'>236</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>หยก อรรถ<span
+  style='display:none'>พลการยาง (นายอรรถพล อินธิพันธ์)</span></td>
+  <td class=xl87 style='border-top:none;border-left:none'>01/04/2024</td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>IV012567<span
+  style='display:none'>04/033</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>LLIT18565<span
+  style='display:none'>14-CW/HP010</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>185/65R1<span
+  style='display:none'>4 CrossWind HP010 86H LL PCI</span></td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>4.00 </td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl88 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl89 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl89 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl90 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>ธนัสวลัย (<span
+  style='display:none'>หนิง) ร้านค้า/ภกายดาว (ปู)</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>เงินสด/VA<span
+  style='display:none'>T</span></td>
+  <td class=xl91 style='border-top:none;border-left:none'>ยางเล็ก</td>
+  <td class=xl92 align=left style='border-top:none;border-left:none'>LLIT18565<span
+  style='display:none'>14-CW/HP010</span></td>
+  <td class=xl93 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>25.00 </td>
+  <td class=xl93 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp; </span>770.08 </td>
+  <td class=xl94 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;</span>795.00 </td>
+  <td class=xl95 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl96 align=right style='border-top:none;border-left:none'>205.00 </td>
+  <td class=xl97 align=right style='border-top:none;border-left:none'>820.00 </td>
+  <td class=xl98 align=right style='border-top:none;border-left:none'>100.00 </td>
+  <td class=xl99 align=left style='border-top:none;border-left:none'>กำไร</td>
+  <td class=xl100 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp; </span>20.50 %</td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>LLIT18565<span
+  style='display:none'>14-CW/HP010</span></td>
+  <td class=xl102 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl103 align=left style='border-top:none;border-left:none'><font
+  color="#FF0000" style='mso-ignore:color'>-100.00 </font></td>
+  <td class=xl104 align=left style='border-top:none;border-left:none'>ต่ำใบราคา</td>
+  <td class=xl105 align=left style='border-top:none;border-left:none'><font
+  color="#FF0000" style='mso-ignore:color'>-<span
+  style='mso-spacerun:yes'>&nbsp; </span>9.09 %</font></td>
+  <td class=xl106 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl106 style='border-top:none;border-left:none'>LLIT</td>
+  <td class=xl106 style='border-top:none;border-left:none'>ยางเล็ก</td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>ธนัสวลัย
+  (<span style='display:none'>หนิง) ร้านค้า</span></td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>ภกายดาว (<span
+  style='display:none'>ปู)</span></td>
+  <td class=xl107 align=left style='border-top:none;border-left:none'>เงินสด/VA<span
+  style='display:none'>T</span></td>
+  <td class=xl102 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl108 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl109 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=29 style='height:21.75pt'>
+  <td height=29 class=xl86 align=left style='height:21.75pt;border-top:none'>SAC.0000<span
+  style='display:none'>236</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>หยก อรรถ<span
+  style='display:none'>พลการยาง (นายอรรถพล อินธิพันธ์)</span></td>
+  <td class=xl87 style='border-top:none;border-left:none'>01/04/2024</td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>IV012567<span
+  style='display:none'>04/033</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>LE19514-<span
+  style='display:none'>NFVP</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>195R14C <span
+  style='display:none'>8PR N-F Van PLUS 106/104P LA PCI</span></td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>3.00 </td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl88 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl89 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl89 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl90 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>ธนัสวลัย (<span
+  style='display:none'>หนิง) ร้านค้า/ภกายดาว (ปู)</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>เงินสด/VA<span
+  style='display:none'>T</span></td>
+  <td class=xl91 style='border-top:none;border-left:none'>ยางเล็ก</td>
+  <td class=xl92 align=left style='border-top:none;border-left:none'>LE19514-<span
+  style='display:none'>NFVP</span></td>
+  <td class=xl93 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>25.00 </td>
+  <td class=xl93 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl94 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl95 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl96 align=right style='border-top:none;border-left:none'>172.00 </td>
+  <td class=xl97 align=right style='border-top:none;border-left:none'>516.00 </td>
+  <td class=xl98 align=right style='border-top:none;border-left:none'>75.00 </td>
+  <td class=xl99 align=left style='border-top:none;border-left:none'>กำไร</td>
+  <td class=xl100 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp; </span>13.13 %</td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>LE19514-<span
+  style='display:none'>NFVP</span></td>
+  <td class=xl102 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl103 align=left style='border-top:none;border-left:none'><font
+  color="#FF0000" style='mso-ignore:color'>-120.00 </font></td>
+  <td class=xl104 align=left style='border-top:none;border-left:none'>ต่ำใบราคา</td>
+  <td class=xl105 align=left style='border-top:none;border-left:none'><font
+  color="#FF0000" style='mso-ignore:color'>-<span
+  style='mso-spacerun:yes'>&nbsp; </span>8.39 %</font></td>
+  <td class=xl106 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl106 style='border-top:none;border-left:none'>LEAO</td>
+  <td class=xl106 style='border-top:none;border-left:none'>ยางเล็ก</td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>ธนัสวลัย
+  (<span style='display:none'>หนิง) ร้านค้า</span></td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>ภกายดาว (<span
+  style='display:none'>ปู)</span></td>
+  <td class=xl107 align=left style='border-top:none;border-left:none'>เงินสด/VA<span
+  style='display:none'>T</span></td>
+  <td class=xl102 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl108 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl109 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=29 style='height:21.75pt'>
+  <td height=29 class=xl86 align=left style='height:21.75pt;border-top:none'>SAC.0000<span
+  style='display:none'>236</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>หยก อรรถ<span
+  style='display:none'>พลการยาง (นายอรรถพล อินธิพันธ์)</span></td>
+  <td class=xl87 style='border-top:none;border-left:none'>01/04/2024</td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>IV012567<span
+  style='display:none'>04/033</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>LLIT19514<span
+  style='display:none'>-R666</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>195R14 8P<span
+  style='display:none'>R R666 106/104P LL ECE</span></td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>4.00 </td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl88 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl89 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl89 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl90 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>ธนัสวลัย (<span
+  style='display:none'>หนิง) ร้านค้า/ภกายดาว (ปู)</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>เงินสด/VA<span
+  style='display:none'>T</span></td>
+  <td class=xl91 style='border-top:none;border-left:none'>ยางเล็ก</td>
+  <td class=xl92 align=left style='border-top:none;border-left:none'>LLIT19514<span
+  style='display:none'>-R666</span></td>
+  <td class=xl93 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>25.00 </td>
+  <td class=xl93 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl94 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl95 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl96 align=right style='border-top:none;border-left:none'>153.00 </td>
+  <td class=xl97 align=right style='border-top:none;border-left:none'>612.00 </td>
+  <td class=xl98 align=right style='border-top:none;border-left:none'>100.00 </td>
+  <td class=xl99 align=left style='border-top:none;border-left:none'>กำไร</td>
+  <td class=xl100 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp; </span>11.68 %</td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>LLIT19514<span
+  style='display:none'>-R666</span></td>
+  <td class=xl102 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl103 align=left style='border-top:none;border-left:none'><font
+  color="#FF0000" style='mso-ignore:color'>-120.00 </font></td>
+  <td class=xl104 align=left style='border-top:none;border-left:none'>ต่ำใบราคา</td>
+  <td class=xl105 align=left style='border-top:none;border-left:none'><font
+  color="#FF0000" style='mso-ignore:color'>-<span
+  style='mso-spacerun:yes'>&nbsp; </span>8.39 %</font></td>
+  <td class=xl106 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl106 style='border-top:none;border-left:none'>LLIT</td>
+  <td class=xl106 style='border-top:none;border-left:none'>ยางเล็ก</td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>ธนัสวลัย
+  (<span style='display:none'>หนิง) ร้านค้า</span></td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>ภกายดาว (<span
+  style='display:none'>ปู)</span></td>
+  <td class=xl107 align=left style='border-top:none;border-left:none'>เงินสด/VA<span
+  style='display:none'>T</span></td>
+  <td class=xl102 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl108 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl109 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <tr height=29 style='height:21.75pt'>
+  <td height=29 class=xl86 align=left style='height:21.75pt;border-top:none'>SAC.0000<span
+  style='display:none'>236</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>หยก อรรถ<span
+  style='display:none'>พลการยาง (นายอรรถพล อินธิพันธ์)</span></td>
+  <td class=xl87 style='border-top:none;border-left:none'>01/04/2024</td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>IV012567<span
+  style='display:none'>04/033</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>LE215501<span
+  style='display:none'>7-LISP/HP3</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>215/50R1<span
+  style='display:none'>7 LION SPORT HP3 95V LA (HB) CCC</span></td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>4.00 </td>
+  <td class=xl88 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl88 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl89 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl89 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>-<span style='mso-spacerun:yes'>&nbsp;&nbsp; </span></td>
+  <td class=xl90 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>ธนัสวลัย (<span
+  style='display:none'>หนิง) ร้านค้า/ภกายดาว (ปู)</span></td>
+  <td class=xl86 align=left style='border-top:none;border-left:none'>เงินสด/VA<span
+  style='display:none'>T</span></td>
+  <td class=xl91 style='border-top:none;border-left:none'>ยางเล็ก</td>
+  <td class=xl92 align=left style='border-top:none;border-left:none'>LE215501<span
+  style='display:none'>7-LISP/HP3</span></td>
+  <td class=xl93 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>25.00 </td>
+  <td class=xl93 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl94 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl95 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl96 align=right style='border-top:none;border-left:none'>156.00 </td>
+  <td class=xl97 align=right style='border-top:none;border-left:none'>624.00 </td>
+  <td class=xl98 align=right style='border-top:none;border-left:none'>100.00 </td>
+  <td class=xl99 align=left style='border-top:none;border-left:none'>กำไร</td>
+  <td class=xl100 align=left style='border-top:none;border-left:none'><span
+  style='mso-spacerun:yes'>&nbsp; </span>11.56 %</td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>LE215501<span
+  style='display:none'>7-LISP/HP3</span></td>
+  <td class=xl102 align=center style='border-top:none;border-left:none'>#####</td>
+  <td class=xl103 align=left style='border-top:none;border-left:none'><font
+  color="#FF0000" style='mso-ignore:color'>-130.00 </font></td>
+  <td class=xl104 align=left style='border-top:none;border-left:none'>ต่ำใบราคา</td>
+  <td class=xl105 align=left style='border-top:none;border-left:none'><font
+  color="#FF0000" style='mso-ignore:color'>-<span
+  style='mso-spacerun:yes'>&nbsp; </span>8.78 %</font></td>
+  <td class=xl106 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl106 style='border-top:none;border-left:none'>LEAO</td>
+  <td class=xl106 style='border-top:none;border-left:none'>ยางเล็ก</td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>ธนัสวลัย
+  (<span style='display:none'>หนิง) ร้านค้า</span></td>
+  <td class=xl101 align=left style='border-top:none;border-left:none'>ภกายดาว (<span
+  style='display:none'>ปู)</span></td>
+  <td class=xl107 align=left style='border-top:none;border-left:none'>เงินสด/VA<span
+  style='display:none'>T</span></td>
+  <td class=xl102 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl108 style='border-top:none;border-left:none'>&nbsp;</td>
+  <td class=xl109 style='border-top:none;border-left:none'>&nbsp;</td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+  <td width=96 style='width:72pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</body>
+
+</html>
